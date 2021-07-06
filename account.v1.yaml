@@ -34,9 +34,9 @@ servers:
   - url: 'https://staging.stoplight.io/v1'
     description: ''
 paths:
-  '/api/devices/{accountid}':
+  '/api/accounts/{accountid}':
     get:
-      summary: listDevices
+      summary: listAccounts
       tags:
         - Devices
       responses:
@@ -164,7 +164,7 @@ paths:
         - $ref: '#/components/parameters/limit'
         - $ref: '#/components/parameters/deviceid'
     post:
-      summary: newDevice
+      summary: newAccount
       tags:
         - Devices
       responses:
@@ -246,7 +246,7 @@ paths:
                 $ref: ./models/device.v1.json
         description: 'The only required field to add a new device is `''deviceName''`, however if left empty it will default to `''newDevice''`. Stoplight Demo assigns unique identifiers (`''deviceID''`) without user intervention. Additional information can be  updated by the user either through the service cloud interface or but using the `''PUT''` operation for this endpoint.'
     put:
-      summary: updateDevice
+      summary: updateAccount
       tags:
         - Devices
       responses:
@@ -321,7 +321,7 @@ paths:
               $ref: ./models/device.v1.json
         description: 'Beside the fields the user wishes to update, the only field required by this operation is `''deviceid''`, however if left empty it will default to `''all''`. Such a request will result in error code `''400 Bad Request''` as this operation only allows updating one device per request.'
     delete:
-      summary: removeDevice
+      summary: deleteAccount
       tags:
         - Devices
         - IOT
