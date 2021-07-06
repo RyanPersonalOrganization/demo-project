@@ -3,7 +3,12 @@ info:
   title: Devices
   version: '1.0'
   description: |-
-    ![Stoplight](https://f.hubspotusercontent10.net/hubfs/4892910/Stoplight-Horizontal-Logo.png)
+    </br>
+    <span style="font-size: 3em; color: #5D535E;">
+      <i class="fas fa-robot fa-2x"></i> <i>Robot Factory - Devices
+    </i></span> 
+    </br>
+    </br>
 
     Experiment with the `'Devices'` API to get a list of registered devices, add or remove devices, and to update existing records.
 
