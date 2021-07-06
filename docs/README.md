@@ -13,6 +13,10 @@ tags: [Guides]
 
 [**Backed By This GIT Repo!**](https://github.com/stoplightio/stoplight-platform-demo)
 
+Please Slack @Andrew Mathes or email andrew@stoplight.io for access.
+
+---
+
 Interact with the `'Devices'` API to get a list of registered devices, add or remove devices and to update existing records.
 
 Use this API to leverage **_Robot Factory_**'s central repository of devices that allows users to manage automation systems at home, at work or on the go.
@@ -24,8 +28,6 @@ Use this API to leverage **_Robot Factory_**'s central repository of devices tha
   <li><span class="fa-li"><i class="fas fa-spinner fa-pulse"></i></span>Sync devices</li>
   <li><span class="fa-li"><i class="far fa-square"></i></span>Invite friends to <strong>Robot Factory<strong></li>
 </ul>
-
-![droid](https://images.unsplash.com/photo-1527430253228-e93688616381?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2391&q=80)
 
 ### Code Generation
 
