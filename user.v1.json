@@ -1,0 +1,44 @@
+{
+  "title": "User",
+  "type": "object",
+  "x-tags": [
+    "IOT"
+  ],
+  "description": "Users associated with a Robot Factory account. Administrative priviledges are indicated to show which users can configure device management and which users can only interact with configured devices.",
+  "properties": {
+    "userID": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "userName": {
+      "type": "string"
+    },
+    "isAdmin": {
+      "type": "boolean"
+    },
+    "locationID": {
+      "type": "string"
+    },
+    "locationName": {
+      "type": "string"
+    },
+    "deviceCount": {
+      "type": "integer"
+    },
+    "dateCreated": {
+      "type": "string",
+      "format": "date-time",
+      "example": "2017-07-21T17:32:28Z"
+    },
+    "dateUpdated": {
+      "type": "string",
+      "format": "date-time",
+      "example": "2017-07-21T17:32:28Z"
+    }
+  },
+  "required": [
+    "userID",
+    "userName",
+    "isAdmin"
+  ]
+}

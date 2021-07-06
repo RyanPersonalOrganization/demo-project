@@ -1,0 +1,53 @@
+{
+  "title": "Space",
+  "type": "object",
+  "description": "Robot Factory accounts can service multiple spaces allowing users to manage home automation devices at home, at work or anywhere in between.",
+  "x-tags": [
+    "IOT",
+    "devices"
+  ],
+  "properties": {
+    "spaceID": {
+      "type": "string"
+    },
+    "spaceName": {
+      "type": "string"
+    },
+    "lat": {
+      "type": "number"
+    },
+    "long": {
+      "type": "number"
+    },
+    "spaceType": {
+      "type": "string"
+    },
+    "isPrimary": {
+      "type": "boolean"
+    },
+    "country": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "dateCreated": {
+      "type": "string",
+      "format": "date-time",
+      "example": "2017-07-21T17:32:28Z"
+    },
+    "dateUpdated": {
+      "type": "string",
+      "format": "date-time",
+      "example": "2017-07-21T17:32:28Z"
+    }
+  },
+  "required": [
+    "spaceID",
+    "isPrimary",
+    "country"
+  ]
+}
