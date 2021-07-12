@@ -44,6 +44,9 @@ paths:
       summary: listDevices
       tags:
         - Devices
+        - Test1
+        - Test2
+        - asdfasdf
       responses:
         '200':
           description: OK
