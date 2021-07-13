@@ -251,7 +251,7 @@ paths:
             schema:
               type: array
               items:
-                $ref: ./models/device.v1.json
+                $ref: ./device.v1.json
         description: 'The only required field to add a new device is `''deviceName''`, however if left empty it will default to `''newDevice''`. Stoplight Demo assigns unique identifiers (`''deviceID''`) without user intervention. Additional information can be  updated by the user either through the service cloud interface or but using the `''PUT''` operation for this endpoint.'
     put:
       summary: updateDevice
@@ -403,6 +403,11 @@ paths:
             application/json:
               schema:
                 $ref: ./models/responseCode.v1.yaml
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./device.v1.json
     parameters:
       - schema:
           type: string
