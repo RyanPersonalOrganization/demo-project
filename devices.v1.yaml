@@ -171,6 +171,7 @@ paths:
         - $ref: '#/components/parameters/sort'
         - $ref: '#/components/parameters/limit'
         - $ref: '#/components/parameters/deviceid'
+      x-securityBTtest: S12345
     post:
       summary: newDevice
       tags:
