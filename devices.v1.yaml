@@ -452,6 +452,7 @@ paths:
           in: query
           name: limit
           description: Limit number of results
+      x-internal: true
     post:
       summary: ''
       operationId: post-device-deviceId
