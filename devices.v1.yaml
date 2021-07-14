@@ -417,6 +417,54 @@ paths:
         in: path
         required: true
         description: unique per account (see `'My Account'` for more information)
+  '/device/{deviceId}':
+    parameters:
+      - schema:
+          type: string
+        name: deviceId
+        in: path
+        required: true
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: 'https://stoplight.io/api/v1/projects/demo/designlibrary/nodes/github.yaml/definitions/asset?deref=bundle'
+              examples: {}
+        '201':
+          description: Created
+        '400':
+          description: Bad Request
+      operationId: get-device-deviceId
+      description: Get Information About An Endpoint
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Content-Type
+          description: application/json
+        - schema:
+            type: string
+          in: query
+          name: limit
+          description: Limit number of results
+    post:
+      summary: ''
+      operationId: post-device-deviceId
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./device.v1.json
+      parameters:
+        - $ref: '#/components/parameters/deviceid'
+        - $ref: '#/components/parameters/limit'
 components:
   schemas: {}
   parameters:
