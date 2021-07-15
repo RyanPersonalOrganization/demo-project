@@ -32,11 +32,11 @@ info:
     name: MIT
     url: 'https://opensource.org/licenses/MIT'
 servers:
-  - url: 'https://stoplight.io'
+  - url: 'https://stoplight_test.io'
     description: Stoplight Device Platform
   - description: ''
-    url: 'https://stoplight.io/v1'
-  - url: 'https://staging.stoplight.io/v1'
+    url: 'https://stoplight_test.io/v1'
+  - url: 'https://staging.stoplight_test.io/v1'
     description: ''
 paths:
   '/api/devices/{accountid}':
