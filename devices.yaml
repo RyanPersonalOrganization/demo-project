@@ -1,0 +1,187 @@
+openapi: 3.0.0
+info:
+  title: devices
+  version: '1.0'
+  description: This is a devices API
+servers:
+  - url: 'http://myAPIendpoint:3000'
+    description: apiendpoint
+paths:
+  '/device/{deviceId}':
+    parameters:
+      - schema:
+          type: string
+        name: deviceId
+        in: path
+        required: true
+    get:
+      summary: Device Endpoint
+      tags: []
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                properties:
+                  deviceID:
+                    type: string
+                    minLength: 1
+                  deviceName:
+                    type: string
+                    minLength: 1
+                  deviceClass:
+                    type: string
+                    minLength: 1
+                  spaceID:
+                    type: string
+                    minLength: 1
+                  alexaCompatible:
+                    type: boolean
+                  storageUsed:
+                    type: number
+                  storageFree:
+                    type: number
+                  dateCreated:
+                    type: string
+                    minLength: 1
+                  dateUpdated:
+                    type: string
+                    minLength: 1
+                required:
+                  - deviceID
+                  - deviceName
+                  - deviceClass
+                  - spaceID
+                  - alexaCompatible
+                  - storageUsed
+                  - storageFree
+                  - dateCreated
+                  - dateUpdated
+                x-examples:
+                  example-1:
+                    deviceID: string
+                    deviceName: string
+                    deviceClass: string
+                    spaceID: string
+                    alexaCompatible: true
+                    storageUsed: 0
+                    storageFree: 0
+                    dateCreated: '2017-07-21T17:32:28Z'
+                    dateUpdated: '2017-07-21T17:32:28Z'
+              examples: {}
+            application/xml:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  type:
+                    type: string
+                  dateCreated:
+                    type: string
+                  locationCreated:
+                    type: object
+                    properties:
+                      street:
+                        type: string
+                      city:
+                        type: string
+                      zipCode:
+                        type: string
+                  attributes:
+                    oneOf:
+                      - properties:
+                          engine:
+                            type: string
+                      - properties:
+                          wheels:
+                            type: string
+                    type: object
+        '400':
+          description: Bad Request
+      operationId: get-device-deviceId
+      description: This gets device information
+      security:
+        - API Key - 1: []
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Content-Type
+          description: application/json
+        - schema:
+            type: string
+          in: query
+          name: limit
+          description: limits number of results
+    post:
+      summary: ''
+      operationId: post-device-deviceId
+      responses:
+        '200':
+          description: OK
+    put:
+      summary: ''
+      operationId: put-device-deviceId
+      responses:
+        '200':
+          description: OK
+    delete:
+      summary: ''
+      operationId: delete-device-deviceId
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    User:
+      title: User
+      type: object
+      description: ''
+      x-examples:
+        Alice Smith:
+          id: 142
+          firstName: Alice
+          lastName: Smith
+          email: alice.smith@gmail.com
+          dateOfBirth: '1997-10-31'
+          emailVerified: true
+          signUpDate: '2019-08-24'
+      properties:
+        id:
+          type: integer
+          description: Unique identifier for the given user.
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+          format: email
+        dateOfBirth:
+          type: string
+          format: date
+          example: '1997-10-31'
+        emailVerified:
+          type: boolean
+          description: Set to true if the user's email has been verified.
+        createDate:
+          type: string
+          format: date
+          description: The date that the user was created.
+      required:
+        - id
+        - firstName
+        - lastName
+        - email
+        - emailVerified
+  securitySchemes:
+    API Key - 1:
+      name: API Key
+      type: apiKey
+      in: query
+security:
+  - API Key - 1: []
