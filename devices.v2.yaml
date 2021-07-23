@@ -438,6 +438,7 @@ paths:
         - StoplightDemo Key: []
         - OAuth: []
         - OpenID Connect: []
+      description: Add a new description
 components:
   schemas: {}
   parameters:
