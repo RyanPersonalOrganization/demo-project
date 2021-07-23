@@ -417,6 +417,27 @@ paths:
         in: path
         required: true
         description: unique per account (see `'My Account'` for more information)
+  /api/myDevices:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  test:
+                    type: string
+                  test1:
+                    type: string
+                  test2:
+                    type: string
+      operationId: get-api-myDevices
+      security:
+        - HTTP Auth: []
 components:
   schemas: {}
   parameters:
