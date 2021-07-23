@@ -435,6 +435,9 @@ paths:
       operationId: get-api-myDevices
       security:
         - HTTP Auth: []
+        - StoplightDemo Key: []
+        - OAuth: []
+        - OpenID Connect: []
 components:
   schemas: {}
   parameters:
