@@ -415,7 +415,7 @@ paths:
         description: unique per account (see `'My Account'` for more information)
   /api/myDevices:
     get:
-      summary: myDevices
+      summary: myDevicesasdfsdfasdfa45677dfasdfasdfasdfasdfasdfa12345
       tags:
         - myDevices
       responses:
