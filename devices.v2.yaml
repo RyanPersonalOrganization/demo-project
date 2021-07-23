@@ -44,9 +44,6 @@ paths:
       summary: listDevices
       tags:
         - Devices
-        - Test1
-        - Test2
-        - asdfasdf
       responses:
         '200':
           description: OK
@@ -333,7 +330,6 @@ paths:
       summary: removeDevice
       tags:
         - Devices
-        - IOT
       operationId: delete-api-devices
       description: |-
         ![Stoplight](https://f.hubspotusercontent10.net/hubfs/4892910/Stoplight-Horizontal-Logo.png)
@@ -420,7 +416,8 @@ paths:
   /api/myDevices:
     get:
       summary: Your GET endpoint
-      tags: []
+      tags:
+        - myDevices
       responses:
         '200':
           description: OK
