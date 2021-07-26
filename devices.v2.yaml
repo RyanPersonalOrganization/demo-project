@@ -144,7 +144,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ./models/responseCode.v1.yaml
+                $ref: ./responseCode.v1.yaml
       operationId: get-api-devices
       description: |-
         <span style="font-size: 1.5em; color: #5D535E;">
@@ -190,49 +190,49 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ./models/responseCode.v1.yaml
+                $ref: ./responseCode.v1.yaml
         '401':
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: ./models/responseCode.v1.yaml
+                $ref: ./responseCode.v1.yaml
         '403':
           description: Forbidden
           content:
             application/json:
               schema:
-                $ref: ./models/responseCode.v1.yaml
+                $ref: ./responseCode.v1.yaml
         '404':
           description: Not Found
           content:
             application/json:
               schema:
-                $ref: ./models/responseCode.v1.yaml
+                $ref: ./responseCode.v1.yaml
         '500':
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: ./models/responseCode.v1.yaml
+                $ref: ./responseCode.v1.yaml
         '502':
           description: Bad Gateway
           content:
             application/json:
               schema:
-                $ref: ./models/responseCode.v1.yaml
+                $ref: ./responseCode.v1.yaml
         '504':
           description: Gateway Timeout
           content:
             application/json:
               schema:
-                $ref: ./models/responseCode.v1.yaml
+                $ref: ./responseCode.v1.yaml
         default:
           description: Error
           content:
             application/json:
               schema:
-                $ref: ./models/responseCode.v1.yaml
+                $ref: ./responseCode.v1.yaml
       operationId: post-api-devices
       description: |-
         ![Stoplight](https://f.hubspotusercontent10.net/hubfs/4892910/Stoplight-Horizontal-Logo.png)
@@ -267,49 +267,49 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ./models/responseCode.v1.yaml
+                $ref: ./responseCode.v1.yaml
         '401':
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: ./models/responseCode.v1.yaml
+                $ref: ./responseCode.v1.yaml
         '403':
           description: Forbidden
           content:
             application/json:
               schema:
-                $ref: ./models/responseCode.v1.yaml
+                $ref: ./responseCode.v1.yaml
         '404':
           description: Not Found
           content:
             application/json:
               schema:
-                $ref: ./models/responseCode.v1.yaml
+                $ref: ./responseCode.v1.yaml
         '500':
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: ./models/responseCode.v1.yaml
+                $ref: ./responseCode.v1.yaml
         '502':
           description: Bad Gateway
           content:
             application/json:
               schema:
-                $ref: ./models/responseCode.v1.yaml
+                $ref: ./responseCode.v1.yaml
         '504':
           description: Gateway Timeout
           content:
             application/json:
               schema:
-                $ref: ./models/responseCode.v1.yaml
+                $ref: ./responseCode.v1.yaml
         default:
           description: Error
           content:
             application/json:
               schema:
-                $ref: ./models/responseCode.v1.yaml
+                $ref: ./responseCode.v1.yaml
       operationId: put-api-devices
       description: |-
         ![Stoplight](https://f.hubspotusercontent10.net/hubfs/4892910/Stoplight-Horizontal-Logo.png)
@@ -357,49 +357,49 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ./models/responseCode.v1.yaml
+                $ref: ./responseCode.v1.yaml
         '400':
           description: Bad Request
           content:
             application/json:
               schema:
-                $ref: ./models/responseCode.v1.yaml
+                $ref: ./responseCode.v1.yaml
         '401':
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: ./models/responseCode.v1.yaml
+                $ref: ./responseCode.v1.yaml
         '403':
           description: Forbidden
           content:
             application/json:
               schema:
-                $ref: ./models/responseCode.v1.yaml
+                $ref: ./responseCode.v1.yaml
         '404':
           description: Not Found
           content:
             application/json:
               schema:
-                $ref: ./models/responseCode.v1.yaml
+                $ref: ./responseCode.v1.yaml
         '500':
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: ./models/responseCode.v1.yaml
+                $ref: ./responseCode.v1.yaml
         '502':
           description: Bad Gateway
           content:
             application/json:
               schema:
-                $ref: ./models/responseCode.v1.yaml
+                $ref: ./responseCode.v1.yaml
         '504':
           description: Gateway Timeout
           content:
             application/json:
               schema:
-                $ref: ./models/responseCode.v1.yaml
+                $ref: ./responseCode.v1.yaml
       requestBody:
         content:
           application/json:
@@ -415,29 +415,984 @@ paths:
         description: unique per account (see `'My Account'` for more information)
   /api/myDevices:
     get:
-      summary: myDevicesasdfsdfasdfa45677dfasdfasdfasdfasdfasdfa12345
+      summary: myDevices
       tags:
         - myDevices
       responses:
         '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  test:
-                    type: string
-                  test1:
-                    type: string
-                  test2:
-                    type: string
+          $ref: '#/components/responses/200'
       operationId: get-api-myDevices
-      security:
-        - HTTP Auth: []
-        - StoplightDemo Key: []
-        - OAuth: []
-        - OpenID Connect: []
+      description: Add a new description
+  /api/myDevices3:
+    get:
+      summary: myDevices
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices3
+      description: Add a new description
+      tags:
+        - scaleApis
+  /api/myDevices4:
+    get:
+      summary: myDevices
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices4
+      description: Add a new description
+      tags:
+        - scaleApis
+  /api/myDevices5:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices5
+      description: Add a new description
+  /api/myDevices6:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices6
+      description: Add a new description
+  /api/myDevices7:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices7
+      description: Add a new description
+  /api/myDevices8:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices8
+      description: Add a new description
+  /api/myDevices9:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices9
+      description: Add a new description
+  /api/myDevices10:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices10
+      description: Add a new description
+  /api/myDevices11:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices11
+      description: Add a new description
+  /api/myDevices12:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices12
+      description: Add a new description
+  /api/myDevices13:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices13
+      description: Add a new description
+  /api/myDevices14:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices14
+      description: Add a new description
+  /api/myDevices15:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices15
+      description: Add a new description
+  /api/myDevices16:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices16
+      description: Add a new description
+  /api/myDevices17:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices17
+      description: Add a new description
+  /api/myDevices18:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices18
+      description: Add a new description
+  /api/myDevices19:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices19
+      description: Add a new description
+  /api/myDevices20:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices20
+      description: Add a new description
+  /api/myDevices21:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices21
+      description: Add a new description
+  /api/myDevices22:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices22
+      description: Add a new description
+  /api/myDevices23:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices23
+      description: Add a new description
+  /api/myDevices24:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices24
+      description: Add a new description
+  /api/myDevices25:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices25
+      description: Add a new description
+  /api/myDevices26:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices26
+      description: Add a new description
+  /api/myDevices27:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices27
+      description: Add a new description
+  /api/myDevices28:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices28
+      description: Add a new description
+  /api/myDevices29:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices29
+      description: Add a new description
+  /api/myDevices30:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices30
+      description: Add a new description
+  /api/myDevices31:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices31
+      description: Add a new description
+  /api/myDevices32:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices32
+      description: Add a new description
+  /api/myDevices33:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices33
+      description: Add a new description
+  /api/myDevices34:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices34
+      description: Add a new description
+  /api/myDevices35:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices35
+      description: Add a new description
+  /api/myDevices36:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices36
+      description: Add a new description
+  /api/myDevices37:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices37
+      description: Add a new description
+  /api/myDevices38:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices38
+      description: Add a new description
+  /api/myDevices39:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices39
+      description: Add a new description
+  /api/myDevices40:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices40
+      description: Add a new description
+  /api/myDevices41:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices41
+      description: Add a new description
+  /api/myDevices42:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices42
+      description: Add a new description
+  /api/myDevices43:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices43
+      description: Add a new description
+  /api/myDevices44:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices44
+      description: Add a new description
+  /api/myDevices45:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices45
+      description: Add a new description
+  /api/myDevices46:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices46
+      description: Add a new description
+  /api/myDevices47:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices47
+      description: Add a new description
+  /api/myDevices48:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices48
+      description: Add a new description
+  /api/myDevices49:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices49
+      description: Add a new description
+  /api/myDevices50:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices50
+      description: Add a new description
+  /api/myDevices51:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices51
+      description: Add a new description
+  /api/myDevices52:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices52
+      description: Add a new description
+  /api/myDevices53:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices53
+      description: Add a new description
+  /api/myDevices54:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices54
+      description: Add a new description
+  /api/myDevices55:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices55
+      description: Add a new description
+  /api/myDevices56:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices56
+      description: Add a new description
+  /api/myDevices57:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices57
+      description: Add a new description
+  /api/myDevices58:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices58
+      description: Add a new description
+  /api/myDevices59:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices59
+      description: Add a new description
+  /api/myDevices60:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices60
+      description: Add a new description
+  /api/myDevices61:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices61
+      description: Add a new description
+  /api/myDevices62:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices62
+      description: Add a new description
+  /api/myDevices63:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices63
+      description: Add a new description
+  /api/myDevices64:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices64
+      description: Add a new description
+  /api/myDevices65:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices65
+      description: Add a new description
+  /api/myDevices66:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices66
+      description: Add a new description
+  /api/myDevices67:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices67
+      description: Add a new description
+  /api/myDevices68:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices68
+      description: Add a new description
+  /api/myDevices69:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices69
+      description: Add a new description
+  /api/myDevices70:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices70
+      description: Add a new description
+  /api/myDevices71:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices71
+      description: Add a new description
+  /api/myDevices72:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices72
+      description: Add a new description
+  /api/myDevices73:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices73
+      description: Add a new description
+  /api/myDevices74:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices74
+      description: Add a new description
+  /api/myDevices75:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices75
+      description: Add a new description
+  /api/myDevices76:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices76
+      description: Add a new description
+  /api/myDevices77:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices77
+      description: Add a new description
+  /api/myDevices78:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices78
+      description: Add a new description
+  /api/myDevices79:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices79
+      description: Add a new description
+  /api/myDevices80:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices80
+      description: Add a new description
+  /api/myDevices81:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices81
+      description: Add a new description
+  /api/myDevices82:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices82
+      description: Add a new description
+  /api/myDevices83:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices83
+      description: Add a new description
+  /api/myDevices84:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices84
+      description: Add a new description
+  /api/myDevices85:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices85
+      description: Add a new description
+  /api/myDevices86:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices86
+      description: Add a new description
+  /api/myDevices87:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices87
+      description: Add a new description
+  /api/myDevices88:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices88
+      description: Add a new description
+  /api/myDevices89:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices89
+      description: Add a new description
+  /api/myDevices90:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices90
+      description: Add a new description
+  /api/myDevices91:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices91
+      description: Add a new description
+  /api/myDevices92:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices92
+      description: Add a new description
+  /api/myDevices93:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices93
+      description: Add a new description
+  /api/myDevices94:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices94
+      description: Add a new description
+  /api/myDevices95:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices95
+      description: Add a new description
+  /api/myDevices96:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices96
+      description: Add a new description
+  /api/myDevices97:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices97
+      description: Add a new description
+  /api/myDevices98:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices98
+      description: Add a new description
+  /api/myDevices99:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+      operationId: get-api-myDevices99
+      description: Add a new description
 components:
   schemas: {}
   parameters:
@@ -542,15 +1497,36 @@ components:
       type: openIdConnect
       openIdConnectUrl: 'https://stoplight.io/auth/openid-configuration'
       description: ''
-  responses: {}
+  responses:
+    '200':
+      description: 200 Response
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              id:
+                $ref: ./responseCode.v1.yaml
+          examples:
+            example-1:
+              value:
+                id:
+                  code: 200
+                  message: Standard Success
+    404-Error:
+      description: Example response
+      content:
+        application/json:
+          schema:
+            $ref: ./responseCode.v1.yaml
+          examples:
+            example-1:
+              value:
+                code: 404
+                message: Not Found
 security:
   - CloudHome Key: []
 tags:
   - name: Devices
-    description: relative to device management
-    externalDocs:
-      url: 'https://cloudhome.io/api/tags/devices'
   - name: IOT
-    description: relative to devices and the 'internet of things'
-    externalDocs:
-      url: 'https://cloudhome.io/api/tags/IOT'
+  - name: scaleApis
