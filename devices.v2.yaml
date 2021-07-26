@@ -353,11 +353,7 @@ paths:
         - $ref: '#/components/parameters/spaceid'
       responses:
         '200':
-          description: Deleted
-          content:
-            application/json:
-              schema:
-                $ref: ./responseCode.v1.yaml
+          $ref: '#/components/responses/200'
         '400':
           description: Bad Request
           content:
@@ -492,96 +488,6 @@ paths:
         '200':
           $ref: '#/components/responses/200'
       operationId: get-api-myDevices9
-      description: Add a new description
-  /api/myDevices10:
-    get:
-      summary: myDevices
-      tags:
-        - scaleApis
-      responses:
-        '200':
-          $ref: '#/components/responses/200'
-      operationId: get-api-myDevices10
-      description: Add a new description
-  /api/myDevices11:
-    get:
-      summary: myDevices
-      tags:
-        - scaleApis
-      responses:
-        '200':
-          $ref: '#/components/responses/200'
-      operationId: get-api-myDevices11
-      description: Add a new description
-  /api/myDevices12:
-    get:
-      summary: myDevices
-      tags:
-        - scaleApis
-      responses:
-        '200':
-          $ref: '#/components/responses/200'
-      operationId: get-api-myDevices12
-      description: Add a new description
-  /api/myDevices13:
-    get:
-      summary: myDevices
-      tags:
-        - scaleApis
-      responses:
-        '200':
-          $ref: '#/components/responses/200'
-      operationId: get-api-myDevices13
-      description: Add a new description
-  /api/myDevices14:
-    get:
-      summary: myDevices
-      tags:
-        - scaleApis
-      responses:
-        '200':
-          $ref: '#/components/responses/200'
-      operationId: get-api-myDevices14
-      description: Add a new description
-  /api/myDevices15:
-    get:
-      summary: myDevices
-      tags:
-        - scaleApis
-      responses:
-        '200':
-          $ref: '#/components/responses/200'
-      operationId: get-api-myDevices15
-      description: Add a new description
-  /api/myDevices16:
-    get:
-      summary: myDevices
-      tags:
-        - scaleApis
-      responses:
-        '200':
-          $ref: '#/components/responses/200'
-      operationId: get-api-myDevices16
-      description: Add a new description
-  /api/myDevices17:
-    get:
-      summary: myDevices
-      tags:
-        - scaleApis
-      responses:
-        '200':
-          $ref: '#/components/responses/200'
-      operationId: get-api-myDevices17
-      description: Add a new description
-  /api/myDevices18:
-    get:
-      summary: myDevices
-      tags:
-        - scaleApis
-      responses:
-        '200':
-          $ref: '#/components/responses/200'
-      operationId: get-api-myDevices18
       description: Add a new description
 components:
   schemas: {}
