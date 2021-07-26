@@ -19,7 +19,7 @@ paths:
                 properties:
                   test:
                     type: string
-                    pattern: '[A-Fa-f]'
+                    pattern: '[A-Fa-f]*'
       operationId: get-device
 components:
   schemas:
