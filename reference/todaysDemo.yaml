@@ -16,7 +16,7 @@ paths:
             application/json:
               schema:
                 type: object
-                minProperties: 3
+                minProperties: 5
                 maxProperties: 9
                 properties:
                   test:
