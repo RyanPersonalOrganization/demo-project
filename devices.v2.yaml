@@ -416,7 +416,11 @@ paths:
         - myDevices
       responses:
         '200':
-          $ref: '#/components/responses/200'
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
       operationId: get-api-myDevices
       description: Add a new description
   /api/myDevices3:
@@ -424,7 +428,11 @@ paths:
       summary: myDevices
       responses:
         '200':
-          $ref: '#/components/responses/200'
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
       operationId: get-api-myDevices3
       description: Add a new description
       tags:
@@ -434,7 +442,11 @@ paths:
       summary: myDevices
       responses:
         '200':
-          $ref: '#/components/responses/200'
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
       operationId: get-api-myDevices4
       description: Add a new description
       tags:
@@ -446,7 +458,11 @@ paths:
         - scaleApis
       responses:
         '200':
-          $ref: '#/components/responses/200'
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
       operationId: get-api-myDevices5
       description: Add a new description
   /api/myDevices6:
@@ -456,7 +472,11 @@ paths:
         - scaleApis
       responses:
         '200':
-          $ref: '#/components/responses/200'
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
       operationId: get-api-myDevices6
       description: Add a new description
   /api/myDevices7:
@@ -466,7 +486,11 @@ paths:
         - scaleApis
       responses:
         '200':
-          $ref: '#/components/responses/200'
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
       operationId: get-api-myDevices7
       description: Add a new description
   /api/myDevices8:
@@ -476,7 +500,11 @@ paths:
         - scaleApis
       responses:
         '200':
-          $ref: '#/components/responses/200'
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
       operationId: get-api-myDevices8
       description: Add a new description
   /api/myDevices9:
@@ -486,7 +514,11 @@ paths:
         - scaleApis
       responses:
         '200':
-          $ref: '#/components/responses/200'
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
       operationId: get-api-myDevices9
       description: Add a new description
 components:
