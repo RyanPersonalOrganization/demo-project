@@ -16,6 +16,7 @@ paths:
             application/json:
               schema:
                 type: object
+                additionalProperties: false
                 properties:
                   test:
                     type: string
