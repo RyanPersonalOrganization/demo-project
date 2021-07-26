@@ -16,11 +16,19 @@ paths:
             application/json:
               schema:
                 type: object
-                additionalProperties: false
+                minProperties: 3
+                maxProperties: 9
                 properties:
                   test:
                     type: string
                     pattern: '[A-Fa-f]*'
+                  test2:
+                    type: array
+                    items:
+                      type: string
+                      minLength: 3
+                      maxLength: 23
+                      pattern: '[A-Ga-g]*'
       operationId: get-device
 components:
   schemas:
