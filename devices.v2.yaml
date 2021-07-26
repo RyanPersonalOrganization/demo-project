@@ -514,11 +514,7 @@ paths:
         - scaleApis
       responses:
         '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: ./responseCode.v1.yaml
+          $ref: '#/components/responses/200'
       operationId: get-api-myDevices9
       description: Add a new description
 components:
