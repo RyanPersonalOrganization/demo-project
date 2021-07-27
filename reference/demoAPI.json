@@ -60,7 +60,8 @@
             "name": "limit",
             "description": "limit number of devices returned"
           }
-        ]
+        ],
+        "x-demo": "x-demo-value"
       },
       "post": {
         "summary": "",
