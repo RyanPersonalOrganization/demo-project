@@ -63,7 +63,7 @@
             "description": "limit number of devices returned"
           }
         ],
-        "x-demo": "x-demo-value"
+        "x-demo": "x-value-1"
       },
       "post": {
         "summary": "",
