@@ -24,9 +24,6 @@
       ],
       "get": {
         "summary": "Get device Information",
-        "tags": [
-          "x-demo"
-        ],
         "responses": {
           "200": {
             "description": "OK",
