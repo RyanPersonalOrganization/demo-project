@@ -46,7 +46,7 @@
           }
         },
         "operationId": "get-device-deviceId",
-        "description": "Sample Description",
+        "description": "Sample Description\n\n\nInternal Groups\n\nx-demo : x-value",
         "parameters": [
           {
             "$ref": "../devices.v2.yaml#/components/parameters/deviceid"
