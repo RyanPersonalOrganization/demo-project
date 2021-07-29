@@ -39,7 +39,7 @@ servers:
   - url: 'https://staging.stoplight_test.io/v1'
     description: ''
 paths:
-  '/api/devices/{accountid}':
+  '/api/devices/{deviceId}':
     get:
       summary: listDevices
       tags:
@@ -405,7 +405,7 @@ paths:
       - schema:
           type: string
           example: jetsonsFutureHome
-        name: accountid
+        name: deviceId
         in: path
         required: true
         description: unique per account (see `'My Account'` for more information)
@@ -423,7 +423,7 @@ paths:
                 $ref: ./responseCode.v1.yaml
       operationId: get-api-myDevices
       description: Add a new description
-  /api/myDevices3:
+  /api/listAllDevices:
     get:
       summary: myDevices
       responses:
@@ -437,7 +437,8 @@ paths:
       description: Add a new description
       tags:
         - scaleApis
-  /api/myDevices4:
+    parameters: []
+  /api/bulkDevices:
     get:
       summary: myDevices
       responses:
@@ -451,7 +452,8 @@ paths:
       description: Add a new description
       tags:
         - scaleApis
-  /api/myDevices5:
+    parameters: []
+  /api/deviceRegistration:
     get:
       summary: myDevices
       tags:
@@ -465,7 +467,8 @@ paths:
                 $ref: ./responseCode.v1.yaml
       operationId: get-api-myDevices5
       description: Add a new description
-  /api/myDevices6:
+    parameters: []
+  /api/deviceLocation:
     get:
       summary: myDevices
       tags:
@@ -479,7 +482,8 @@ paths:
                 $ref: ./responseCode.v1.yaml
       operationId: get-api-myDevices6
       description: Add a new description
-  /api/myDevices7:
+    parameters: []
+  /api/deviceStatus:
     get:
       summary: myDevices
       tags:
@@ -493,30 +497,7 @@ paths:
                 $ref: ./responseCode.v1.yaml
       operationId: get-api-myDevices7
       description: Add a new description
-  /api/myDevices8:
-    get:
-      summary: myDevices
-      tags:
-        - scaleApis
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: ./responseCode.v1.yaml
-      operationId: get-api-myDevices8
-      description: Add a new description
-  /api/myDevices9:
-    get:
-      summary: myDevices
-      tags:
-        - scaleApis
-      responses:
-        '200':
-          $ref: '#/components/responses/200'
-      operationId: get-api-myDevices9
-      description: Add a new description
+    parameters: []
 components:
   schemas: {}
   parameters:
