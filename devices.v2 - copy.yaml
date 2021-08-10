@@ -1,0 +1,637 @@
+openapi: 3.0.0
+info:
+  title: Devices
+  version: '2.0'
+  description: |-
+    </br>
+    <span style="font-size: 3em; color: #5D535E;">
+      <i class="fas fa-robot fa-2x"></i> <i>Robot Factory - Devices
+    </i></span> 
+    </br>
+    </br>
+
+    Experiment with the `'Devices'` API to get a list of registered devices, add or remove devices, and to update existing records.
+
+    Use this API to leverage _*Robot Factory*_'s central repository of devices that allow's users to manage automation systems at home, at work or on the go.
+
+
+    ```bash
+    curl --request GET \
+      --url 'https://stoplight.io/api/devices/abc?spaceid=all&sort=desc&limit=10' \
+      --header 'apikey: 123' \
+      --header 'deviceid: all'
+    ```
+
+    ![droids](https://f.hubspotusercontent10.net/hubfs/4892910/Training/Demo.stoplight/Demo-Robot-Image-3.png?raw=true)
+  contact:
+    name: Stoplight Demo
+    email: sales@stoplight.io
+    url: stoplight.io
+  termsOfService: stoplight.io/api/devices/terms
+  license:
+    name: MIT
+    url: 'https://opensource.org/licenses/MIT'
+servers:
+  - url: 'https://stoplight_test.io'
+    description: Stoplight Device Platform
+  - description: ''
+    url: 'https://stoplight_test.io/v1'
+  - url: 'https://staging.stoplight_test.io/v1'
+    description: ''
+paths:
+  '/api/devices/{deviceId}':
+    get:
+      summary: listDevices
+      tags:
+        - Devices
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ./device.v1.json
+              examples:
+                devices:
+                  value:
+                    - deviceID: '123'
+                      deviceName: frontDoorLock
+                      deviceClass: safety
+                      spaceID: home
+                      alexaCompatible: true
+                      storageUsed: 0.003
+                      storageFree: 1
+                      dateCreated: '2017-05-21T20:34:25+42:01'
+                      dateUpdated: '2018-01-29T20:36:30+00:00'
+                    - deviceID: '456'
+                      deviceName: thermostat
+                      deviceClass: comfort
+                      spaceID: home
+                      alexaCompatible: true
+                      storageUsed: 0.025
+                      storageFree: 1
+                      dateCreated: '2019-07-20T15:27:32+18:21'
+                      dateUpdated: '2020-03-01T22:13:24+00:03'
+                    - deviceID: '789'
+                      deviceName: sprinkler
+                      deviceClass: convenience
+                      spaceID: yard
+                      alexaCompatible: false
+                      storageUsed: 0.0018
+                      storageFree: 1
+                      dateCreated: '2020-06-18T11:23:29+44:12'
+                      dateUpdated: '2020-06-18T11:23:29+44:12'
+                device:
+                  value:
+                    - deviceID: abc
+                      deviceName: welcomeDroid
+                      deviceClass: commercial
+                      spaceID: office
+                      alexaCompatible: true
+                      storageUsed: 137
+                      storageFree: 300
+                      dateCreated: '2019-07-20T15:27:32+18:21'
+                      dateUpdated: '2020-03-01T22:13:24+00:03'
+          headers:
+            header-0:
+              $ref: '#/components/parameters/deviceid'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+        '502':
+          description: Bad Gateway
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+        '504':
+          description: Gateway Timeout
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+      operationId: get-api-devices
+      description: |-
+        <span style="font-size: 1.5em; color: #5D535E;">
+          <i class="fas fa-robot fa-xs"></i> listDevices
+        </span>
+
+        Returns a list of devices for an account at a given space (or all spaces if using the default value `'all'`). A valid `'Stoplight Demo Key'` is required to authenticate, users must also specify their `'accountid'` when requesting devices. The response can be further defined by limiting the number of results or sorting them as required.
+
+        If specific devices are desired, users can specify the `'deviceid'` or multiple thereof values in the header.
+
+        More information about required parameters and authentication can be seen below.
+
+        ```bash
+        curl --request GET \
+          --url 'https://stoplight.io/api/devices/abc?spaceid=all&sort=desc&limit=10' \
+          --header 'apikey: 123' \
+          --header 'deviceid: all'
+        ```
+      parameters:
+        - $ref: '#/components/parameters/spaceid'
+        - $ref: '#/components/parameters/sort'
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/deviceid'
+      x-securityBTtest: S12345
+    post:
+      summary: newDevice
+      tags:
+        - Devices
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+              examples:
+                Created:
+                  value:
+                    code: 201
+                    message: Created
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+        '502':
+          description: Bad Gateway
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+        '504':
+          description: Gateway Timeout
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+      operationId: post-api-devices
+      description: |-
+        ![Stoplight](https://f.hubspotusercontent10.net/hubfs/4892910/Stoplight-Horizontal-Logo.png)
+
+        Add new devices to the Stoplight service cloud. A valid `'Stoplight Demo Key'` is required to authenticate, users must also specify their `'accountid'` when posting new devices. Users are limited to posting _**10 devices per request**_, further quantities of devices must be paginated.
+
+        More information about required parameters and authentication can be seen below.
+      parameters:
+        - $ref: '#/components/parameters/spaceid'
+        - $ref: '#/components/parameters/deviceName'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: ./device.v1.json
+        description: 'The only required field to add a new device is `''deviceName''`, however if left empty it will default to `''newDevice''`. Stoplight Demo assigns unique identifiers (`''deviceID''`) without user intervention. Additional information can be  updated by the user either through the service cloud interface or but using the `''PUT''` operation for this endpoint.'
+    put:
+      summary: updateDevice
+      tags:
+        - Devices
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+        '502':
+          description: Bad Gateway
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+        '504':
+          description: Gateway Timeout
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+      operationId: put-api-devices
+      description: |-
+        ![Stoplight](https://f.hubspotusercontent10.net/hubfs/4892910/Stoplight-Horizontal-Logo.png)
+
+        Update information for existing devices registerd on the Robot Factory service cloud. A valid `'Stoplight Demo Key'` is required to authenticate, users must also specify their `'accountid'` when updating device data. Users are limited to updating _**1 device per request**_ by specifying a `'deviceid'`, further device updates must be paginated.
+
+        More information about required parameters and authentication can be seen below.
+      parameters:
+        - $ref: '#/components/parameters/deviceid'
+        - $ref: '#/components/parameters/spaceid'
+      requestBody:
+        content:
+          application/xml:
+            schema:
+              $ref: ./device.v1.json
+        description: 'Beside the fields the user wishes to update, the only field required by this operation is `''deviceid''`, however if left empty it will default to `''all''`. Such a request will result in error code `''400 Bad Request''` as this operation only allows updating one device per request.'
+    delete:
+      summary: removeDevice
+      tags:
+        - Devices
+      operationId: delete-api-devices
+      description: |-
+        ![Stoplight](https://f.hubspotusercontent10.net/hubfs/4892910/Stoplight-Horizontal-Logo.png)
+
+        RemoveDevice
+
+        Delete devices registerd on the Robot Factory service cloud. A valid `'Robot Factory Key'` is required to authenticate, users must also specify their `'accountid'` when deleting devices. Users are limited to deleting _**1 device per request**_ by specifying a `'deviceid'`, further device removal must be paginated.
+
+        More information about required parameters and authentication can be seen below.
+
+        ```bash
+        curl --request DELETE \
+          --url 'https://robotfactory.io/api/devices/abc?spaceid=all' \
+          --header 'apikey: 123' \
+          --header 'deviceid: all'
+        ```
+
+        The only field required by this operation is `'deviceid'`, however if left empty it will default to `'all'`. Such a request will result in error code `'400 Bad Request'` as this operation only allows deleting one device per request.
+      parameters:
+        - $ref: '#/components/parameters/deviceid'
+        - $ref: '#/components/parameters/spaceid'
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+        '502':
+          description: Bad Gateway
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+        '504':
+          description: Gateway Timeout
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./device.v1.json
+    parameters:
+      - schema:
+          type: string
+          example: jetsonsFutureHome
+        name: deviceId
+        in: path
+        required: true
+        description: unique per account (see `'My Account'` for more information)
+  /api/myDevices:
+    get:
+      summary: myDevices
+      tags:
+        - myDevices
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+      operationId: get-api-myDevices
+      description: Add a new description
+  /api/listAllDevices:
+    get:
+      summary: myDevices
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+      operationId: get-api-myDevices3
+      description: Add a new description
+      tags:
+        - scaleApis
+    parameters: []
+  /api/bulkDevices:
+    get:
+      summary: myDevices
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+      operationId: get-api-myDevices4
+      description: Add a new description
+      tags:
+        - scaleApis
+    parameters: []
+  /api/deviceRegistration:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+      operationId: get-api-myDevices5
+      description: Add a new description
+    parameters: []
+  /api/deviceLocation:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+      operationId: get-api-myDevices6
+      description: Add a new description
+    parameters: []
+  /api/deviceStatus:
+    get:
+      summary: myDevices
+      tags:
+        - scaleApis
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: ./responseCode.v1.yaml
+      operationId: get-api-myDevices7
+      description: Add a new description
+    parameters: []
+components:
+  schemas: {}
+  parameters:
+    accountid:
+      schema:
+        type: string
+        example: StoplightOfficeAustin
+      name: accountid
+      in: path
+      description: unique per account (see `'My Account'` for more information)
+      required: true
+    spaceid:
+      schema:
+        type: string
+        example: seattle-office
+        default: all
+      in: query
+      name: spaceid
+      description: location associated with the devices (see `'My Spaces'` for more information)
+      allowEmptyValue: true
+    deviceName:
+      schema:
+        type: string
+        default: newDevice
+        example: garageCamera
+      in: header
+      name: Device-Name
+      description: devices in the same space require unique names or will be assigned the default name `'newDevice'`
+      allowEmptyValue: true
+    deviceid:
+      schema:
+        type: string
+        default: all
+        example: 123abc
+      in: header
+      name: Device-ID
+      description: 'unique identifiers for devices registered on the service cloud, when empty it defaults to `''all''`'
+      allowEmptyValue: true
+      required: true
+    sort:
+      schema:
+        type: string
+        enum:
+          - asc
+          - desc
+        default: desc
+        example: asc
+      in: query
+      name: sort
+      allowEmptyValue: true
+      description: will sort objects returned from the request
+    limit:
+      schema:
+        type: integer
+        default: 10
+        format: int32
+        example: 15
+        maximum: 25
+        minimum: 1
+      in: query
+      name: limit
+      allowEmptyValue: true
+      description: specify the number of results returned from the request
+  securitySchemes:
+    StoplightDemo Key:
+      name: apiKey
+      type: apiKey
+      in: header
+      description: Provided upon account registration (see `'My Account'` for more information). API Keys can be used as Basic HTTP Authentication credentials and provide a substitute for the account's actual username and password. API Keys are only available to team accounts and there is only 1 key per account. API Keys do not support scopes and have therefore access to all contents of the account.
+    HTTP Auth:
+      type: http
+      scheme: basic
+      description: 'Basic HTTP Authentication as per [RFC-2617](https://tools.ietf.org/html/rfc2617) (Digest not supported). Note that Basic Auth with username and password as credentials is only available on accounts that have 2-factor-auth / 2-step-verification disabled. If you use 2fa, you should authenticate using OAuth2 instead.'
+    OAuth:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: 'https://cloudhome.io/oauth2/authorize'
+          tokenUrl: 'https://cloudhome.io/oauth2/token'
+          scopes:
+            'devices:write': Read and modify your devices
+            'locations:write': Read and modify your locations
+            'accounts:write': Read and modify your accounts
+            'users:write': Read and modify your users
+            'devices:delete': Delete your devices
+            'locations:delete': Delete your locations
+            'users:delete': Delete your users
+          refreshUrl: 'https://cloudhome.io/oauth2/refresh'
+        implicit:
+          authorizationUrl: 'https://cloudhome.io/oauth2/authorize'
+          refreshUrl: 'https://cloudhome.io/oauth2/refresh'
+          scopes:
+            'devices:write': Read and modify your devices
+            'locations:write': Read and modify your locations
+            'accounts:write': Read and modify your accounts
+            'users:write': Read and modify your users
+            'devices:delete': Delete your devices
+            'locations:delete': Delete your locations
+            'users:delete': Delete your users
+      description: 'OAuth 2 as per [RFC-6749](https://tools.ietf.org/html/rfc6749). OAuth2 is a protocol that lets external apps request authorization to private details in a user''s CloudHome account without getting their password. This is preferred over Basic Authentication because tokens can be limited to specific types of data, and can be revoked by users at any time.'
+    OpenID Connect:
+      type: openIdConnect
+      openIdConnectUrl: 'https://stoplight.io/auth/openid-configuration'
+      description: ''
+  responses:
+    '200':
+      description: 200 Response
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              id:
+                $ref: ./responseCode.v1.yaml
+          examples:
+            example-1:
+              value:
+                id:
+                  code: 200
+                  message: Standard Success
+    404-Error:
+      description: Example response
+      content:
+        application/json:
+          schema:
+            $ref: ./responseCode.v1.yaml
+          examples:
+            example-1:
+              value:
+                code: 404
+                message: Not Found
+security:
+  - CloudHome Key: []
+tags:
+  - name: Devices
+  - name: IOT
+  - name: scaleApis
