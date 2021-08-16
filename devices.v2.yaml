@@ -425,7 +425,7 @@ paths:
       description: Add a new description
   /api/listAllDevices:
     get:
-      summary: myDevices
+      summary: listAllDevices
       responses:
         '200':
           description: Success
@@ -440,7 +440,7 @@ paths:
     parameters: []
   /api/bulkDevices:
     get:
-      summary: myDevices
+      summary: bulkDevices
       responses:
         '200':
           description: Success
@@ -455,7 +455,7 @@ paths:
     parameters: []
   /api/deviceRegistration:
     get:
-      summary: myDevices
+      summary: deviceRegistration
       tags:
         - scaleApis
       responses:
@@ -470,7 +470,7 @@ paths:
     parameters: []
   /api/deviceLocation:
     get:
-      summary: myDevices
+      summary: deviceLocation
       tags:
         - scaleApis
       responses:
@@ -485,7 +485,7 @@ paths:
     parameters: []
   /api/deviceStatus:
     get:
-      summary: myDevices
+      summary: deviceStatus
       tags:
         - scaleApis
       responses:
