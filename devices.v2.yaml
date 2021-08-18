@@ -497,6 +497,7 @@ paths:
                 $ref: ./responseCode.v1.yaml
       operationId: get-api-myDevices7
       description: Add a new description
+      x-stoplightSecretExtension: x-stoplightSecretValue
     parameters: []
 components:
   schemas: {}
