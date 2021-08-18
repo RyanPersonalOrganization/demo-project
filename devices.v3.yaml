@@ -479,7 +479,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: 'https://stoplight.io/api/v1/projects/demo/designlibrary/nodes/github.yaml/definitions/assets?mid=2936'
       operationId: get-api-myDevices6
       description: Add a new description
     parameters: []
