@@ -163,6 +163,9 @@ paths:
           --header 'apikey: 123' \
           --header 'deviceid: all'
         ```
+
+        You will want to call:
+        https://demo.stoplight.io/docs/stoplight-platform-demo/b3A6MTY5OTE0NzE-list-devices
       parameters:
         - $ref: '#/components/parameters/spaceid'
         - $ref: '#/components/parameters/sort'
