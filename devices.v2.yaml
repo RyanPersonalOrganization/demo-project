@@ -23,6 +23,11 @@ info:
     ```
 
     ![droids](https://f.hubspotusercontent10.net/hubfs/4892910/Training/Demo.stoplight/Demo-Robot-Image-3.png?raw=true)
+
+    You will want to call (in order):
+    - [listDevices](https://demo.stoplight.io/docs/stoplight-platform-demo/b3A6MTY5OTE0NzE-list-devices)
+    - [updateDevices](https://demo.stoplight.io/docs/stoplight-platform-demo/b3A6MTY5OTE0NzE-list-devices)
+    - [listNewDevices](https://demo.stoplight.io/docs/stoplight-platform-demo/b3A6MTY5OTE0NzE-list-devices)
   contact:
     name: Stoplight Demo
     email: sales@stoplight.io
