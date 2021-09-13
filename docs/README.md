@@ -25,7 +25,7 @@ Use this API to leverage **_Robot Factory_**'s central repository of devices tha
 <ul class="fa-ul" style="list-style-type:none;">
   <li><span class="fa-li"><i class="fas fa-check-square"></i></span>Register a device</li>
   <li><span class="fa-li"><i class="fas fa-check-square"></i></span>Apply custom runtime settings</li>
-  <li><span class="fa-li"><i class="fas fa-spinner fa-pulse"></i></span>Sync devices</li>
+  <li><span class="fa-li"><i class="fas fa-check-square"></i></span>Sync devices</li>
   <li><span class="fa-li"><i class="far fa-square"></i></span>Invite friends to <strong>Robot Factory<strong></li>
 </ul>
 
