@@ -446,7 +446,7 @@ paths:
       tags:
         - scaleApis
     parameters: []
-  /api/bulkDevices:
+  /api/bulk-devices:
     get:
       summary: bulkDevices
       responses:

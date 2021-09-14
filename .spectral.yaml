@@ -1,0 +1,258 @@
+formats:
+  - oas3.0
+extends:
+  - 'spectral:oas'
+rules:
+  info-matches-stoplight:
+    description: This is an example rule
+    message: Info must contain Stoplight
+    given: $.info
+    recommended: true
+    type: style
+    then:
+      field: title
+      function: pattern
+      functionOptions:
+        match: Stoplight
+
+  api-home:
+    description: APIs MUST have a root path defined (`/`), to stop forcing all API consumers to visit documentation for basic interactions.
+    severity: error
+    given: $.paths
+    then:
+      field: /
+      function: truthy
+ 
+  api-home-get:
+    description: APIs root path MUST have a GET defined, otherwise people won't know how to get it.
+    severity: error
+    given: $.paths[/]
+    then:
+      field: get
+      function: truthy
+
+  paths-kebab-case:
+    description: Should paths be kebab-case.
+    message: '{{property}} should be kebab-case (lower case and separated with hyphens)'
+    severity: warn
+    given: $.paths[*]~
+    then:
+      function: pattern
+      functionOptions:
+        match: "^(\/|[a-z0-9-.]+|{[a-zA-Z0-9_]+})+$"
+
+  no-http-basic:
+    description: "Consider a more secure alternative to HTTP Basic."
+    message: "HTTP Basic is a pretty insecure way to pass credentials around, please consider an alternative."
+    severity: warn
+    given: $.components.securitySchemes[*]
+    then:
+      field: scheme
+      function: pattern
+      functionOptions:
+        notMatch: basic
+ 
+  no-x-headers:
+    description: "Please do not use headers with X-"
+    message: "Headers cannot start with X-, so please find a new name for {{property}}. More: https://tools.ietf.org/html/rfc6648"
+    given: "$..parameters.[?(@.in === 'header')].name"
+    then:
+      function: pattern
+      functionOptions:
+        notMatch: '^(x|X)-'
+          
+  # Author: Andrzej (https://github.com/jerzyn)
+  request-GET-no-body:
+    description: A `GET` request MUST NOT accept a `body` parameter
+    severity: error
+    given: $.paths..get.parameters..in
+    then:
+      function: pattern
+      functionOptions:
+        notMatch: "/^body$/"
+
+  # Author: Andrzej (https://github.com/jerzyn)
+  headers-hyphenated-pascal-case:
+    description: All `HTTP` headers MUST use `Hyphenated-Pascal-Case` notation
+    severity: error
+    given: "$..parameters[?(@.in == 'header')].name"
+    message: "'HTTP' headers MUST follow 'Hyphenated-Pascal-Case' notation"
+    type: style
+    then: 
+      function: pattern
+      functionOptions:
+        match: "/^([A-Z][a-z0-9]-)*([A-Z][a-z0-9])+/"
+
+  # Author: Andrzej (https://github.com/jerzyn)
+  oas2-hosts-https-only:
+    description: "ALL requests MUST go through `https` protocol only"
+    severity: error
+    formats: [oas2]
+    type: "style"
+    message: "Schemes MUST be https and no other value is allowed."
+    given: $.schemes
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: array
+          items:
+            type: string
+            enum: ["https"]
+          maxItems: 1
+
+  # Author: Andrzej (https://github.com/jerzyn)
+  oas3-hosts-https-only:
+    description: "ALL requests MUST go through `https` protocol only"
+    formats:
+      - oas3
+    severity: error
+    message: "Servers MUST be https and no other protocol is allowed."
+    given: $.servers..url
+    then:
+      function: pattern
+      functionOptions:
+        match: "/^https:/"
+  
+  # Author: Andrzej (https://github.com/jerzyn)
+  oas3-request-support-json:
+    description: Every request SHOULD support `application/json` media type
+    formats:
+      - oas3
+    severity: warn
+    message: "{{description}}: {{error}}"
+    given: $.paths.[*].requestBody.content[?(@property.indexOf('json') === -1)]^
+    then:
+      function: falsy
+
+  # Author: Phil Sturgeon (https://github.com/philsturgeon)
+  unknown-error-format:
+    description: "Every error response SHOULD support either RFC 7807 (https://tools.ietf.org/html/rfc6648) or the JSON:API Error format."
+    formats:
+      - oas3
+    severity: warn
+    given: $.paths.[*].responses[?(@property.match(/^(4|5)/))].content.*~
+    then:
+      function: enumeration
+      functionOptions:
+        values:
+        - application/vnd.api+json
+        - application/problem+xml
+        - application/problem+json
+
+  operation-short-summary: 
+    description: "Operation summary should be short and sweet, no full stops, and less than 20 characters"
+    recommended: true
+    type: "style"
+    given: "$.paths.*[?( @property === 'get' || @property === 'put' || @property === 'post' || @property === 'delete' || @property === 'options' || @property === 'head' || @property === 'patch' || @property === 'trace' )]"
+    then:
+      - field: summary
+        function: pattern
+        functionOptions:
+          notMatch: "\\."
+      - field: summary
+        function: length
+        functionOptions:
+          max: 20
+
+  # A common convention for schema names is PascalCase
+  schema-names-pascal-case:
+    description: Schema names MUST be written in PascalCase
+    message: '{{property}} is not PascalCase: {{error}}'
+    recommended: true
+    type: style
+    given: '$.components.schemas.*~'
+    then:
+      function: pattern
+      functionOptions:
+        match: '^[A-Z][a-zA-Z0-9]*$'
+
+  # Keep operationIds (which often go in the URL) as kebab case
+  operationIds-kebab-case:
+    description: Operation IDs MUST be written in kebab-case
+    message: '{{property}} is not kebab-case: {{error}}'
+    recommended: true
+    type: style
+    given: "$.paths.*[?( @property === 'get' || @property === 'put' || @property === 'post' || @property === 'delete' || @property === 'options' || @property === 'head' || @property === 'patch' || @property === 'trace' )]"
+    then:
+      field: operationId
+      function: pattern
+      functionOptions:
+        match: "^([a-z0-9-]+)$"
+
+  # Authors: Lorna Mitchell  and @mheap
+  semver:
+    severity: error
+    recommended: true
+    message: Please follow semantic versioning. {{value}} is not a valid version.
+    given: $.info.version
+    then:
+      function: pattern
+      functionOptions:
+        match: "^([0-9]+.[0-9]+.[0-9]+)$"
+
+  fhir-type-pascal-case:
+    description: 'FHIR "types" must be PascalCase'
+    message: 'is not PascalCase: {{error}}'
+    severity: error
+    recommended: true
+    given: '$.paths[*]~'
+    then:
+      function: pattern
+      functionOptions:
+        match: "^(\\/)?[A-Z][a-zA-Z0-9]*(\\/)?"
+
+  fhir-use-ssl:
+    description: FHIR preffers SSL for servers
+    message: '{{property}} does not contain https'
+    severity: warn
+    recommended: true
+    given: $.schemes
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: array
+          contains:
+            const: https
+
+  fhir-consume-mime-types:
+    description: 'FHIR mime-type must be application/fhir+(xml|json|turtle) or application/x-www-form-urlencoded for `search` endpoints'
+    severity: error
+    recommended: true
+    given: '$..consumes.*'
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: string
+          enum:
+            - application/fhir+xml
+            - application/fhir+json
+            - application/fhir+turtle
+            - application/x-www-form-urlencoded
+
+  fhir-produces-mime-types:
+    description: 'FHIR mime-type must be application/fhir+(xml|json|turtle)'
+    severity: error
+    recommended: true
+    given: '$..produces.*'
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: string
+          enum:
+            - application/fhir+xml
+            - application/fhir+json
+            - application/fhir+turtle
+
+  fhir-spec-v4:
+    description: FHIR v4.0 is the prefered version
+    severity: warn
+    recommended: true
+    given: $..headers.Accept
+    then:
+      function: pattern
+      functionOptions:
+        match: '^.*; fhirVersion=4'
