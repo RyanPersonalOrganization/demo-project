@@ -4,47 +4,6 @@ tags: [Guides]
 
 # Best Practices
 
-|**<h1>table1</h1>**|*table2*|~~table3~~|
-|--|--|--|
-|A|b|c
-||e|f
-||e|f
-||e|f
-||e|f
-||e|f
-
-1. First ordered list item
-2. Another item
-   - Unordered sub-list
-3. Actual numbers don't matter, just that it's a number
-   1. Ordered sub-list
-   1. Ordered sub-list
-      1. Ordered sub-list
-         1. test3
-         1. test 4
-         1. test 5
-         2. test
-   1. Ordered sub-list
-4. And another item
-
-- a
-  - c
-    - d
-      - e
-        - f
-            - g 
-- b
-
-
-- [ ] test
-  - [ ] test 2
-- [X] test
-  - [ ] test 2
-    - [ ] test 3
-      - [ ] test 4
-
-
-
 This page contains general pieces of advice which do not strictly belong to the [Specification Explained](specification.md) chapter because they are not directly tied to the OpenAPI Specification.
 
 However, they greatly simplify creating and maintaining OpenAPI documents, so they are worth keeping in mind.
