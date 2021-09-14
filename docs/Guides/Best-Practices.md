@@ -8,7 +8,12 @@ This page contains general pieces of advice which do not strictly belong to the 
 
 However, they greatly simplify creating and maintaining OpenAPI documents, so they are worth keeping in mind.
 
-![Stoplight Logo](https://stoplight.io/images/home/logo-blue-black.png)
+We automatically LINT your APIs.  
+
+Here are some more assets
+- https://github.com/openapi-contrib/style-guides
+- https://meta.stoplight.io/docs/spectral/ZG9jOjExNw-open-api-rules
+- https://meta.stoplight.io/docs/spectral/ZG9jOjI1MTg1-spectral-cli
 
 ## Use a Design-First Approach
 
