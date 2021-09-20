@@ -570,6 +570,13 @@ components:
       name: limit
       allowEmptyValue: true
       description: specify the number of results returned from the request
+    test:
+      name: test
+      in: query
+      required: false
+      schema:
+        type: string
+      description: test
   securitySchemes:
     StoplightDemo Key:
       name: apiKey
