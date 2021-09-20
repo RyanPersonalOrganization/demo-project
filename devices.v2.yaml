@@ -559,24 +559,12 @@ components:
       allowEmptyValue: true
       description: will sort objects returned from the request
     limit:
-      schema:
-        type: integer
-        default: 10
-        format: int32
-        example: 15
-        maximum: 25
-        minimum: 1
-      in: query
       name: limit
-      allowEmptyValue: true
-      description: specify the number of results returned from the request
-    test:
-      name: test
       in: query
       required: false
       schema:
         type: string
-      description: test
+      description: device limit
   securitySchemes:
     StoplightDemo Key:
       name: apiKey
