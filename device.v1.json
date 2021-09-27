@@ -48,6 +48,20 @@
       }
     ]
   },
+  "examples": [
+    {
+      "deviceID": "string",
+      "deviceName": "string",
+      "deviceClass": "string",
+      "spaceID": "string",
+      "alexaCompatible": true,
+      "storageUsed": 0,
+      "storageFree": 0,
+      "dateCreated": "2017-07-21T17:32:28Z",
+      "dateUpdated": "2017-07-21T17:32:28Z"
+    }
+  ],
+  "x-demo": "x-value",
   "properties": {
     "deviceID": {
       "type": "string",
@@ -83,23 +97,12 @@
       "type": "string",
       "format": "date-time",
       "example": "2017-07-21T17:32:28Z"
+    },
+    "location": {
+      "$ref": "./location.v1.json"
     }
   },
   "required": [
     "deviceName"
-  ],
-  "examples": [
-    {
-      "deviceID": "string",
-      "deviceName": "string",
-      "deviceClass": "string",
-      "spaceID": "string",
-      "alexaCompatible": true,
-      "storageUsed": 0,
-      "storageFree": 0,
-      "dateCreated": "2017-07-21T17:32:28Z",
-      "dateUpdated": "2017-07-21T17:32:28Z"
-    }
-  ],
-  "x-demo": "x-value"
+  ]
 }
