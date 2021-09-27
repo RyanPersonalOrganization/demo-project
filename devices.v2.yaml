@@ -523,9 +523,11 @@ components:
         id:
           type: string
         name:
-          type: string
-        type:
-          $ref: '#/components/schemas/attributes'
+          $ref: ./user.v1.json
+        types:
+          type: array
+          items:
+            $ref: '#/components/schemas/attributes'
     attributes:
       title: attributes
       type: object
