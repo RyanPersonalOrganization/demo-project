@@ -255,9 +255,16 @@ paths:
         content:
           application/json:
             schema:
-              type: array
-              items:
-                $ref: ./device.v1.json
+              type: object
+              properties:
+                device:
+                  $ref: ./device.v1.json
+                location:
+                  $ref: ./location.v1.json
+                additionalInfo:
+                  $ref: '#/components/schemas/additionalInfo'
+                attributes:
+                  $ref: '#/components/schemas/attributes'
         description: 'The only required field to add a new device is `''deviceName''`, however if left empty it will default to `''newDevice''`. Stoplight Demo assigns unique identifiers (`''deviceID''`) without user intervention. Additional information can be  updated by the user either through the service cloud interface or but using the `''PUT''` operation for this endpoint.'
     put:
       summary: updateDevice
@@ -508,7 +515,27 @@ paths:
       x-stoplightSecretExtension: x-stoplightSecretValue
     parameters: []
 components:
-  schemas: {}
+  schemas:
+    additionalInfo:
+      title: additionalInfo
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        type:
+          type: string
+    attributes:
+      title: attributes
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+        scheme:
+          type: string
   parameters:
     accountid:
       schema:
