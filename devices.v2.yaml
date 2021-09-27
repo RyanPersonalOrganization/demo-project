@@ -525,7 +525,7 @@ components:
         name:
           type: string
         type:
-          type: string
+          $ref: '#/components/schemas/attributes'
     attributes:
       title: attributes
       type: object
