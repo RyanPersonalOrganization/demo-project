@@ -4858,11 +4858,27 @@ components:
       scheme: bearer
       bearerFormat: JWT
   schemas:
-    '201':
-      title: '201'
-      type: object
+    '200':
       properties:
-        id:
+        status:
+          type: string
+          example: success
+        statusCode:
+          type: number
+          example: 200
+        msgType:
+          type: string
+        msgCode:
+          type: string
+        langCode:
+          type: string
+        tag:
+          type: string
+        dateTime:
+          type: string
+        timestamp:
+          type: string
+        requestID:
           type: string
     cns_attachment_destroy_Response:
       type: object
