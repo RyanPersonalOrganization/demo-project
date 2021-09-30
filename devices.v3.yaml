@@ -540,6 +540,7 @@ components:
           type: string
         test3:
           type: string
+      x-internal: true
   parameters:
     accountid:
       schema:
