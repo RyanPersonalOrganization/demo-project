@@ -4844,7 +4844,42 @@ paths:
           schema:
             type: string
 components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      name: XSRF-TOKEN
+      in: header
+    cookieAuth:
+      type: apiKey
+      name: SAAS_COMMON_BASE_TOKEN_ID
+      in: cookie
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
   schemas:
+    '200':
+      properties:
+        status:
+          type: string
+          example: success
+        statusCode:
+          type: number
+          example: 200
+        msgType:
+          type: string
+        msgCode:
+          type: string
+        langCode:
+          type: string
+        tag:
+          type: string
+        dateTime:
+          type: string
+        timestamp:
+          type: string
+        requestID:
+          type: string
     cns_attachment_destroy_Response:
       type: object
       properties:
