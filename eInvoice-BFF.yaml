@@ -4859,7 +4859,7 @@ components:
       bearerFormat: JWT
   schemas:
     '200':
-      title: '202'
+      title: '200'
       type: object
       properties:
         status:
@@ -4882,6 +4882,7 @@ components:
           type: string
         requestID:
           type: string
+      description: ''
     '201':
       title: '201'
       type: object
