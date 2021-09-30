@@ -4882,7 +4882,6 @@ components:
           type: string
         requestID:
           type: string
-      description: ''
     '201':
       title: '201'
       type: object
