@@ -525,7 +525,16 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/einvoice_invoices_list_nestedCriteriaGroupWithArray'
+              type: object
+              properties:
+                sorts:
+                  $ref: '#/components/schemas/einvoice_invoices_list_nestedCriteriaGroupWithArray'
+                criteriaGroup:
+                  $ref: '#/components/schemas/einvoice_invoices_list_nestedCriteriaGroupWithArray'
+                perPageRecords:
+                  type: number
+                pageNo:
+                  type: number
 components:
   schemas:
     einvoice_invoices_list_nestedCriteriaGroupWithArray:
