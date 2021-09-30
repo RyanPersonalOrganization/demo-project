@@ -4862,10 +4862,8 @@ components:
       properties:
         status:
           type: string
-          example: success
         statusCode:
           type: number
-          example: 200
         msgType:
           type: string
         msgCode:
@@ -4879,6 +4877,12 @@ components:
         timestamp:
           type: string
         requestID:
+          type: string
+    '201':
+      title: '201'
+      type: object
+      properties:
+        id:
           type: string
     cns_attachment_destroy_Response:
       type: object
