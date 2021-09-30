@@ -530,7 +530,9 @@ paths:
                 sorts:
                   $ref: '#/components/schemas/einvoice_invoices_list_nestedCriteriaGroupWithArray'
                 criteriaGroup:
-                  $ref: '#/components/schemas/einvoice_invoices_list_nestedCriteriaGroupWithArray'
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/einvoice_invoices_list_nestedCriteriaGroupWithArray'
                 perPageRecords:
                   type: number
                 pageNo:
