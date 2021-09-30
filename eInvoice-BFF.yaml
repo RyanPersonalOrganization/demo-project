@@ -4858,6 +4858,12 @@ components:
       scheme: bearer
       bearerFormat: JWT
   schemas:
+    '200':
+      title: '200'
+      type: object
+      properties:
+        id:
+          type: string
     cns_attachment_destroy_Response:
       type: object
       properties:
