@@ -4858,7 +4858,7 @@ components:
       scheme: bearer
       bearerFormat: JWT
   schemas:
-    '200':
+    'a200':
       title: '200'
       type: object
       properties:
