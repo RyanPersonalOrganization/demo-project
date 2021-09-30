@@ -4844,19 +4844,6 @@ paths:
           schema:
             type: string
 components:
-  securitySchemes:
-    apiKey:
-      type: apiKey
-      name: XSRF-TOKEN
-      in: header
-    cookieAuth:
-      type: apiKey
-      name: SAAS_COMMON_BASE_TOKEN_ID
-      in: cookie
-    bearerAuth:
-      type: http
-      scheme: bearer
-      bearerFormat: JWT
   schemas:
     '200':
       properties:
