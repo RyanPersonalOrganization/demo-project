@@ -4858,30 +4858,6 @@ components:
       scheme: bearer
       bearerFormat: JWT
   schemas:
-    '200':
-      title: '200'
-      type: object
-      properties:
-        status:
-          type: string
-          example: success
-        statusCode:
-          type: number
-          example: 200
-        msgType:
-          type: string
-        msgCode:
-          type: string
-        langCode:
-          type: string
-        tag:
-          type: string
-        dateTime:
-          type: string
-        timestamp:
-          type: string
-        requestID:
-          type: string
     '201':
       title: '201'
       type: object
