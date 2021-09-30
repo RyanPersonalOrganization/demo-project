@@ -499,8 +499,32 @@ paths:
       description: Add a new description
       x-stoplightSecretExtension: x-stoplightSecretValue
     parameters: []
+  /api/sharedModelTest:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/einvoice_invoices_list_nestedCriteriaGroupWithArray'
+      operationId: get-api-sharedModelTest
 components:
-  schemas: {}
+  schemas:
+    einvoice_invoices_list_nestedCriteriaGroupWithArray:
+      title: einvoice_invoices_list_nestedCriteriaGroupWithArray
+      type: object
+      properties:
+        id:
+          type: string
+        test1:
+          type: string
+        test2:
+          type: string
+        test3:
+          type: string
   parameters:
     accountid:
       schema:
