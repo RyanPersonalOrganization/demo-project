@@ -1,0 +1,11 @@
+title: test
+type: object
+properties:
+  id:
+    type: string
+  t1:
+    type: string
+  t2:
+    type: string
+  t3:
+    type: string
