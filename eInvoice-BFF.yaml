@@ -4859,24 +4859,10 @@ components:
       bearerFormat: JWT
   schemas:
     '200':
+      title: '200'
+      type: object
       properties:
-        status:
-          type: string
-        statusCode:
-          type: number
-        msgType:
-          type: string
-        msgCode:
-          type: string
-        langCode:
-          type: string
-        tag:
-          type: string
-        dateTime:
-          type: string
-        timestamp:
-          type: string
-        requestID:
+        id:
           type: string
     '201':
       title: '201'
