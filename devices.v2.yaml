@@ -99,6 +99,28 @@ paths:
                       storageFree: 300
                       dateCreated: '2019-07-20T15:27:32+18:21'
                       dateUpdated: '2020-03-01T22:13:24+00:03'
+                wallEDevice:
+                  value:
+                    - deviceID: robot
+                      deviceName: string
+                      deviceClass: string
+                      spaceID: string
+                      alexaCompatible: true
+                      storageUsed: 0
+                      storageFree: 0
+                      dateCreated: '2017-07-21T17:32:28Z'
+                      dateUpdated: '2017-07-21T17:32:28Z'
+                specificDevice2:
+                  value:
+                    - deviceID: device2
+                      deviceName: string
+                      deviceClass: string
+                      spaceID: string
+                      alexaCompatible: true
+                      storageUsed: 0
+                      storageFree: 0
+                      dateCreated: '2017-07-21T17:32:28Z'
+                      dateUpdated: '2017-07-21T17:32:28Z'
           headers:
             header-0:
               $ref: '#/components/parameters/deviceid'
@@ -108,12 +130,26 @@ paths:
             application/json:
               schema:
                 $ref: ./responseCode.v1.yaml
+              examples:
+                example-1:
+                  value:
+                    code: 400
+                    message: Not Found
+                example-2:
+                  value:
+                    code: 400
+                    message: Not Found
         '401':
           description: Unauthorized
           content:
             application/json:
               schema:
                 $ref: ./responseCode.v1.yaml
+              examples:
+                example-1:
+                  value:
+                    code: 401
+                    message: Not Found
         '403':
           description: Forbidden
           content:
@@ -671,15 +707,27 @@ tags:
 x-build-type: {}
 x-extension-2: null
 x-rlg-facets:
-  access: private # public, protected or private
-  authentication: user # none, client or user
-  brand: [ car, mtb, pia, vac, jlc ]
-  service_level: high # critical, high, middle, low
-  service_schedule: always_on # always_on, week_days or business_hours
-  data_sources: [eas, sfc] # list of system trigrams
-  target_audience: customer # customer, partner or internal
-  ownership: partner # group, brand, partner or external
-  information_type: [manufacture, process, other] # customer, employee, financial, strategic, logistic, supply_chain, ip, manufacture, process, configuration or other
-  information_class: confidential # public, internal, confidential or highly_confidential
-  lifecycle: pilot # poc, pilot, ga or deprecated
-  cloud_regions: [defra-aws, cnsha-ali] # saas, defra-aws, defra-gcp or cnsha-ali
+  access: privateasdf
+  authentication: userdemo
+  brand:
+    - car
+    - mtb
+    - pia
+    - vac
+    - jlc
+  service_level: high
+  service_schedule: always_on
+  data_sources:
+    - eas
+    - sfc
+  target_audience: customer
+  ownership: partner
+  information_type:
+    - manufacture
+    - process
+    - other
+  information_class: confidential
+  lifecycle: pilot
+  cloud_regions:
+    - defra-aws
+    - cnsha-ali
