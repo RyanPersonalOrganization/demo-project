@@ -668,3 +668,18 @@ tags:
   - name: Devices
   - name: IOT
   - name: scaleApis
+x-build-type: {}
+x-extension-2: null
+x-rlg-facets:
+  access: private # public, protected or private
+  authentication: user # none, client or user
+  brand: [ car, mtb, pia, vac, jlc ]
+  service_level: high # critical, high, middle, low
+  service_schedule: always_on # always_on, week_days or business_hours
+  data_sources: [eas, sfc] # list of system trigrams
+  target_audience: customer # customer, partner or internal
+  ownership: partner # group, brand, partner or external
+  information_type: [manufacture, process, other] # customer, employee, financial, strategic, logistic, supply_chain, ip, manufacture, process, configuration or other
+  information_class: confidential # public, internal, confidential or highly_confidential
+  lifecycle: pilot # poc, pilot, ga or deprecated
+  cloud_regions: [defra-aws, cnsha-ali] # saas, defra-aws, defra-gcp or cnsha-ali
