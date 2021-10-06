@@ -498,6 +498,10 @@ paths:
       operationId: get-api-myDevices7
       description: Add a new description
       x-stoplightSecretExtension: x-stoplightSecretValue
+      parameters:
+        - schema:
+            type: string
+          in: query
     parameters: []
   /api/sharedModelTest:
     get:
