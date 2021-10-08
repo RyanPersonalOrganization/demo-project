@@ -552,6 +552,12 @@ paths:
     parameters: []
 components:
   schemas:
+    '200':
+      title: '200'
+      type: object
+      properties:
+        id:
+          type: string
     additionalInfo:
       title: additionalInfo
       type: object
