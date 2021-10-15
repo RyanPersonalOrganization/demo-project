@@ -2,7 +2,7 @@
   "exclude": [],
   "formats": {
     "openapi": {
-      "rootDir": "docs/someRandomDirectory",
+      "rootDir": "docs",
       "include": [
         "**"
       ]
