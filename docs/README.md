@@ -4,6 +4,31 @@ tags: [Guides]
 
 # Welcome to V2!
 
+```json json_schema
+{
+  "title": "User",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "description": "The user's full name."
+    },
+    "age": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 150
+    },
+    "location": {
+      "$ref": "../device.v1.json"
+    }
+  },
+  "required": ["id", "name"]
+}
+```
+
 </br>
 <span style="font-size: 3em; color: #5D535E;">
   <i class="fas fa-robot fa-2x"></i> <i>Robot Factory
