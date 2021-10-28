@@ -4,8 +4,6 @@ tags: [Guides]
 
 # Welcome to V2! 
 
-Updated (Again)
-
 </br>
 <span style="font-size: 3em; color: #5D535E;">
   <i class="fas fa-robot fa-2x"></i> <i>Robot Factory
