@@ -4,7 +4,7 @@ tags: [Guides]
 
 # Welcome to V2! 
 
-Updated!
+Updated (Again)
 
 </br>
 <span style="font-size: 3em; color: #5D535E;">
