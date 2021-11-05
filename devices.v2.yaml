@@ -139,6 +139,11 @@ paths:
                   value:
                     code: 400
                     message: Not Found
+                demoNov5-example:
+                  value:
+                    code: 404
+                    message: 'Particular resource not found at path / '
+                    extraAttributes: some other attribute
         '401':
           description: Unauthorized
           content:
