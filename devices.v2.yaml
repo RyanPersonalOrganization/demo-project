@@ -102,7 +102,7 @@ paths:
                 wallEDevice:
                   value:
                     - deviceID: robot
-                      deviceName: string
+                      deviceName: DemoNov5
                       deviceClass: string
                       spaceID: string
                       alexaCompatible: true
