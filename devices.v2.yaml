@@ -224,11 +224,6 @@ paths:
           in: header
           name: Accept
           required: true
-        - schema:
-            type: string
-            default: 'text/plain; q=0.5, text/html'
-          in: header
-          name: Accept2
       x-securityBTtest: S12345
     post:
       summary: newDevice
