@@ -217,6 +217,10 @@ paths:
         - $ref: '#/components/parameters/sort'
         - $ref: '#/components/parameters/limit'
         - $ref: '#/components/parameters/deviceid'
+        - schema:
+            type: string
+          in: header
+          name: Accept
       x-securityBTtest: S12345
     post:
       summary: newDevice
