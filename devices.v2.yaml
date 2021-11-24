@@ -53,7 +53,7 @@ paths:
         '200':
           description: OK
           content:
-            application/json:
+            application/stopligh+json:
               schema:
                 type: array
                 items:
