@@ -220,6 +220,7 @@ paths:
         - schema:
             type: string
             default: 'text/plain; q=0.5, text/html'
+            example: 'text/plain; q=0.5, text/html'
           in: header
           name: Accept
       x-securityBTtest: S12345
