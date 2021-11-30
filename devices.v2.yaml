@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
-  title: Billing API v2
-  version: '2.0'
+  title: Devices v2
+  version: '3.0'
   description: |-
     </br>
     <span style="font-size: 3em; color: #5D535E;">
@@ -23,11 +23,6 @@ info:
     ```
 
     ![droids](https://f.hubspotusercontent10.net/hubfs/4892910/Training/Demo.stoplight/Demo-Robot-Image-3.png?raw=true)
-
-    You will want to call (in order):
-    - [listDevices](https://demo.stoplight.io/docs/stoplight-platform-demo/b3A6MTY5OTE0NzE-list-devices)
-    - [updateDevices](https://demo.stoplight.io/docs/stoplight-platform-demo/b3A6MTY5OTE0NzE-list-devices)
-    - [listNewDevices](https://demo.stoplight.io/docs/stoplight-platform-demo/b3A6MTY5OTE0NzE-list-devices)
   contact:
     name: Stoplight Demo
     email: sales@stoplight.io
@@ -53,7 +48,7 @@ paths:
         '200':
           description: OK
           content:
-            application/stopligh+json:
+            application/json:
               schema:
                 type: array
                 items:
@@ -99,28 +94,6 @@ paths:
                       storageFree: 300
                       dateCreated: '2019-07-20T15:27:32+18:21'
                       dateUpdated: '2020-03-01T22:13:24+00:03'
-                wallEDevice:
-                  value:
-                    - deviceID: robot
-                      deviceName: DemoNov5
-                      deviceClass: string
-                      spaceID: string
-                      alexaCompatible: true
-                      storageUsed: 0
-                      storageFree: 0
-                      dateCreated: '2017-07-21T17:32:28Z'
-                      dateUpdated: '2017-07-21T17:32:28Z'
-                specificDevice2:
-                  value:
-                    - deviceID: device2
-                      deviceName: string
-                      deviceClass: string
-                      spaceID: string
-                      alexaCompatible: true
-                      storageUsed: 0
-                      storageFree: 0
-                      dateCreated: '2017-07-21T17:32:28Z'
-                      dateUpdated: '2017-07-21T17:32:28Z'
           headers:
             header-0:
               $ref: '#/components/parameters/deviceid'
@@ -130,31 +103,12 @@ paths:
             application/json:
               schema:
                 $ref: ./responseCode.v1.yaml
-              examples:
-                example-1:
-                  value:
-                    code: 400
-                    message: Not Found
-                example-2:
-                  value:
-                    code: 400
-                    message: Not Found
-                demoNov5-example:
-                  value:
-                    code: 404
-                    message: 'Particular resource not found at path / '
-                    extraAttributes: some other attribute
         '401':
           description: Unauthorized
           content:
             application/json:
               schema:
                 $ref: ./responseCode.v1.yaml
-              examples:
-                example-1:
-                  value:
-                    code: 401
-                    message: Not Found
         '403':
           description: Forbidden
           content:
@@ -162,11 +116,7 @@ paths:
               schema:
                 $ref: ./responseCode.v1.yaml
         '404':
-          description: Not Found
-          content:
-            application/json:
-              schema:
-                $ref: ./responseCode.v1.yaml
+          $ref: '#/components/responses/404-Error'
         '500':
           description: Internal Server Error
           content:
@@ -197,7 +147,7 @@ paths:
           <i class="fas fa-robot fa-xs"></i> listDevices
         </span>
 
-        Returns a list of devices for an account at a given space (or all spaces if using the default value `'all'`). A valid `'Stoplight Demo Key'` is required to authenticate, users must also specify their `'accountid'` when requesting devices. The response can be defined by limiting the number of results or sorting them as required.
+        Returns a list of devices for an account at a given space (or all spaces if using the default value `'all'`). A valid `'Stoplight Demo Key'` is required to authenticate, users must also specify their `'accountid'` when requesting devices. The response can be further defined by limiting the number of results or sorting them as required.
 
         If specific devices are desired, users can specify the `'deviceid'` or multiple thereof values in the header.
 
@@ -209,9 +159,6 @@ paths:
           --header 'apikey: 123' \
           --header 'deviceid: all'
         ```
-
-        You will want to call:
-        https://demo.stoplight.io/docs/stoplight-platform-demo/b3A6MTY5OTE0NzE-list-devices
       parameters:
         - $ref: '#/components/parameters/spaceid'
         - $ref: '#/components/parameters/sort'
@@ -296,16 +243,9 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                device:
-                  $ref: ./device.v1.json
-                location:
-                  $ref: ./location.v1.json
-                additionalInfo:
-                  $ref: '#/components/schemas/additionalInfo'
-                attributes:
-                  $ref: '#/components/schemas/attributes'
+              type: array
+              items:
+                $ref: ./device.v1.json
         description: 'The only required field to add a new device is `''deviceName''`, however if left empty it will default to `''newDevice''`. Stoplight Demo assigns unique identifiers (`''deviceID''`) without user intervention. Additional information can be  updated by the user either through the service cloud interface or but using the `''PUT''` operation for this endpoint.'
     put:
       summary: updateDevice
@@ -494,7 +434,7 @@ paths:
       tags:
         - scaleApis
     parameters: []
-  /api/bulk-devices:
+  /api/bulkDevices:
     get:
       summary: bulkDevices
       responses:
@@ -535,7 +475,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: 'https://stoplight.io/api/v1/projects/demo/designlibrary/nodes/github.yaml/definitions/assets?mid=2936'
       operationId: get-api-myDevices6
       description: Add a new description
     parameters: []
@@ -550,41 +490,82 @@ paths:
           content:
             application/json:
               schema:
-                $ref: 'https://stoplight.io/api/v1/projects/demo/designlibrary/nodes/github.yaml/definitions/actor?mid=2380'
+                $ref: ./responseCode.v1.yaml
       operationId: get-api-myDevices7
       description: Add a new description
       x-stoplightSecretExtension: x-stoplightSecretValue
+      parameters:
+        - schema:
+            type: string
+          in: query
     parameters: []
+  /api/sharedModelTest:
+    get:
+      summary: sharedResponse
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/einvoice_invoices_list_nestedCriteriaGroupWithArray'
+      operationId: get-api-sharedModelTest
+    post:
+      summary: ''
+      operationId: post-api-sharedModelTest
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/einvoice_invoices_list_nestedCriteriaGroupWithArray'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sorts:
+                  $ref: '#/components/schemas/einvoice_invoices_list_nestedCriteriaGroupWithArray295'
+                criteriaGroup:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/einvoice_invoices_list_nestedCriteriaGroupWithArray'
+                perPageRecords:
+                  type: number
+                pageNo:
+                  type: number
+    put:
+      summary: ''
+      operationId: put-api-sharedModelTest
+      responses:
+        '200':
+          description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '':
+                  $ref: '#/components/schemas/einvoice_invoices_list_nestedCriteriaGroupWithArray'
 components:
   schemas:
-    '200':
-      title: '200'
+    einvoice_invoices_list_nestedCriteriaGroupWithArray:
+      title: einvoice_invoices_list_nestedCriteriaGroupWithArray
       type: object
       properties:
         id:
           type: string
-    additionalInfo:
-      title: additionalInfo
-      type: object
-      properties:
-        id:
+        test1:
           type: string
-        name:
-          $ref: ./user.v1.json
-        types:
-          type: array
-          items:
-            $ref: '#/components/schemas/attributes'
-    attributes:
-      title: attributes
-      type: object
-      properties:
-        id:
+        test2:
           type: string
-        type:
+        test3:
           type: string
-        scheme:
-          type: string
+      x-internal: true
   parameters:
     accountid:
       schema:
@@ -635,12 +616,17 @@ components:
       allowEmptyValue: true
       description: will sort objects returned from the request
     limit:
-      name: limit
-      in: query
-      required: false
       schema:
-        type: string
-      description: device limit
+        type: integer
+        default: 10
+        format: int32
+        example: 15
+        maximum: 25
+        minimum: 1
+      in: query
+      name: limit
+      allowEmptyValue: true
+      description: specify the number of results returned from the request
   securitySchemes:
     StoplightDemo Key:
       name: apiKey
@@ -715,30 +701,3 @@ tags:
   - name: Devices
   - name: IOT
   - name: scaleApis
-x-build-type: {}
-x-extension-2: null
-x-rlg-facets:
-  access: privateasdf
-  authentication: userdemo
-  brand:
-    - car
-    - mtb
-    - pia
-    - vac
-    - jlc
-  service_level: high
-  service_schedule: always_on
-  data_sources:
-    - eas
-    - sfc
-  target_audience: customer
-  ownership: partner
-  information_type:
-    - manufacture
-    - process
-    - other
-  information_class: confidential
-  lifecycle: pilot
-  cloud_regions:
-    - defra-aws
-    - cnsha-ali
