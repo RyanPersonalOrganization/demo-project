@@ -47,8 +47,6 @@ paths:
   '/api/devices/{deviceId}':
     get:
       summary: listDevices
-      tags:
-        - Devices
       responses:
         '200':
           description: OK
@@ -218,6 +216,8 @@ paths:
         - $ref: '#/components/parameters/limit'
         - $ref: '#/components/parameters/deviceid'
       x-securityBTtest: S12345
+      tags:
+        - devices
     post:
       summary: newDevice
       tags:
@@ -478,7 +478,7 @@ paths:
       operationId: get-api-myDevices
       description: Add a new description
       tags:
-        - Devices
+        - devices
   /api/listAllDevices:
     get:
       summary: listAllDevices
@@ -512,8 +512,6 @@ paths:
   /api/deviceRegistration:
     get:
       summary: deviceRegistration
-      tags:
-        - scaleApis
       responses:
         '200':
           description: Success
@@ -523,6 +521,8 @@ paths:
                 $ref: ./responseCode.v1.yaml
       operationId: get-api-myDevices5
       description: Add a new description
+      tags:
+        - devices
     parameters: []
   /api/deviceLocation:
     get:
@@ -712,7 +712,7 @@ components:
 security:
   - CloudHome Key: []
 tags:
-  - name: Devices
+  - name: devices
   - name: IOT
   - name: scaleApis
 x-build-type: {}
