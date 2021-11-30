@@ -468,8 +468,6 @@ paths:
   /api/myDevices:
     get:
       summary: myDevices
-      tags:
-        - myDevices
       responses:
         '200':
           description: Success
@@ -479,6 +477,8 @@ paths:
                 $ref: ./responseCode.v1.yaml
       operationId: get-api-myDevices
       description: Add a new description
+      tags:
+        - Devices
   /api/listAllDevices:
     get:
       summary: listAllDevices
