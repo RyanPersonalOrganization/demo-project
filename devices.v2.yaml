@@ -46,7 +46,7 @@ servers:
 paths:
   '/api/devices/{deviceId}':
     get:
-      summary: listDevices
+      summary: listDevice
       responses:
         '200':
           description: OK
@@ -479,6 +479,11 @@ paths:
       description: Add a new description
       tags:
         - devices
+      security:
+        - HTTP Auth: []
+        - StoplightDemo Key: []
+        - OAuth: []
+        - OpenID Connect: []
   /api/listAllDevices:
     get:
       summary: listAllDevices
