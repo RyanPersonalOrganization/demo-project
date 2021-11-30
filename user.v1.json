@@ -1,9 +1,6 @@
 {
   "title": "User",
   "type": "object",
-  "x-tags": [
-    "IOT"
-  ],
   "description": "Users associated with a Robot Factory account. Administrative priviledges are indicated to show which users can configure device management and which users can only interact with configured devices.",
   "properties": {
     "userID": {
@@ -40,5 +37,8 @@
     "userID",
     "userName",
     "isAdmin"
+  ],
+  "x-tags": [
+    "devices"
   ]
 }

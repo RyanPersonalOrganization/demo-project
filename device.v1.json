@@ -2,8 +2,7 @@
   "title": "Device",
   "type": "object",
   "x-tags": [
-    "devices",
-    "IOT"
+    "devices"
   ],
   "description": "Describes a device activated on a **Robot Factory** account. Each class can contain more than one device and location, centrally managed by the CloudHome service cloud.",
   "x-examples": {

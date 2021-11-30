@@ -3,7 +3,6 @@
   "type": "object",
   "description": "Device geolocation at most recent update. Users can optionally choose to turn off geolocation, however key features such as mapping will not be available.",
   "x-tags": [
-    "IOT",
     "devices"
   ],
   "properties": {

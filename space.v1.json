@@ -3,7 +3,6 @@
   "type": "object",
   "description": "Robot Factory accounts can service multiple spaces allowing users to manage home automation devices at home, at work or anywhere in between.",
   "x-tags": [
-    "IOT",
     "devices"
   ],
   "properties": {
