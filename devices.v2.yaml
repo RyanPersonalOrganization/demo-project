@@ -218,6 +218,8 @@ paths:
       x-securityBTtest: S12345
       tags:
         - devices
+      security:
+        - StoplightDemo Key: []
     post:
       summary: newDevice
       tags:
