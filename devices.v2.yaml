@@ -220,6 +220,7 @@ paths:
         - devices
       security:
         - StoplightDemo Key: []
+        - HTTP Auth: []
     post:
       summary: newDevice
       tags:
