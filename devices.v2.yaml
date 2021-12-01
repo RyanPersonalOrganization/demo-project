@@ -517,21 +517,6 @@ paths:
       tags:
         - scaleApis
     parameters: []
-  /api/deviceRegistration:
-    get:
-      summary: deviceRegistration
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: ./responseCode.v1.yaml
-      operationId: get-api-myDevices5
-      description: Add a new description
-      tags:
-        - devices
-    parameters: []
   /api/deviceLocation:
     get:
       summary: deviceLocation
