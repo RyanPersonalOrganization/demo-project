@@ -706,6 +706,7 @@ security:
   - CloudHome Key: []
 tags:
   - name: devices
+    description: Everything about your devices
   - name: IOT
   - name: scaleApis
 x-build-type: {}
