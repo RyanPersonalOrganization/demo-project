@@ -43,7 +43,7 @@ servers:
       env:
         default: stoplight_test.io
         description: default env
-  - url: 'https://staging2.{env}/v1'
+  - url: 'https://staging.{env}/v1'
     description: Staging Platform
     variables:
       env:
