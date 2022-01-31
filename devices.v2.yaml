@@ -39,10 +39,12 @@ info:
 servers:
   - url: 'https://{env}.io'
     description: Stoplight Device Platform
-  - description: ''
-    url: 'https://{env}/v1'
+    variables:
+      env:
+        default: stoplight_test.io
+        description: default env
   - url: 'https://staging.{env}/v1'
-    description: ''
+    description: Staging Platform
     variables:
       env:
         default: stoplight_test.io
