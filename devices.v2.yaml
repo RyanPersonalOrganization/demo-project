@@ -37,7 +37,7 @@ info:
     name: MIT
     url: 'https://opensource.org/licenses/MIT'
 servers:
-  - url: 'https://{env}.io'
+  - url: 'https://{env}'
     description: Stoplight Device Platform
     variables:
       env:
