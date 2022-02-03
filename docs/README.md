@@ -2,7 +2,7 @@
 tags: [Guides]
 ---
 
-# Welcome to V2! 
+# Welcome to V2! Demo
 
 </br>
 <span style="font-size: 3em; color: #5D535E;">
