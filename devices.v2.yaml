@@ -711,9 +711,9 @@ components:
 security:
   - CloudHome Key: []
 tags:
-  - name: scaleApis
   - name: devices
     description: Everything about your devices
+  - name: scaleApis
   - name: IOT
 x-build-type: {}
 x-extension-2: null
