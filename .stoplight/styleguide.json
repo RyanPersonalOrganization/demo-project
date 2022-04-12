@@ -1,0 +1,1488 @@
+{
+  "description": "",
+  "formats": [
+    "oas2",
+    "oas3",
+    "oas3.0",
+    "oas3.1"
+  ],
+  "aliases": {},
+  "rules": {},
+  "extends": [
+    "cHJqOjEyMzU4Ng@18"
+  ],
+  "extendedStyleguides": [
+    {
+      "id": "cHJqOjEyMzU4Ng",
+      "name": "Stoplight Style Guide",
+      "slug": "stoplight-style-guide",
+      "workspace": {
+        "slug": "apistylebook",
+        "name": "API Stylebook"
+      },
+      "icon": "robot",
+      "color": "#3898ff",
+      "description": "Default rules for Stoplight projects",
+      "latestRelease": {
+        "release": 18
+      }
+    }
+  ],
+  "inheritedRules": [
+    {
+      "given": [
+        "#API_Contact"
+      ],
+      "severity": "off",
+      "then": {
+        "function": "truthy",
+        "field": "url"
+      },
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "name": "contact-url",
+      "description": "Contact object must have \"url\"",
+      "message": "Contact object must have \"url\""
+    },
+    {
+      "given": [
+        "#API_Contact"
+      ],
+      "severity": "off",
+      "then": {
+        "function": "truthy",
+        "field": "email"
+      },
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "name": "contact-email",
+      "description": "Contact object must have \"email\"",
+      "message": "Contact object must have \"email\""
+    },
+    {
+      "given": [
+        "#API_Document"
+      ],
+      "severity": "warn",
+      "then": {
+        "function": "truthy",
+        "field": "info.contact"
+      },
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "name": "info-contact",
+      "description": "Info object must have \"contact\" object.",
+      "message": "Info object must have \"contact\" object."
+    },
+    {
+      "given": [
+        "#API_Document"
+      ],
+      "severity": "warn",
+      "then": {
+        "function": "truthy",
+        "field": "info.description"
+      },
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "name": "info-description",
+      "description": "Info object must have \"description\" object.",
+      "message": "Info object must have \"description\" object."
+    },
+    {
+      "given": [
+        "#API_Document"
+      ],
+      "severity": "off",
+      "then": {
+        "function": "truthy",
+        "field": "info.license"
+      },
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "name": "info-license",
+      "description": "Info object must have \"description\" object.",
+      "message": "Info object must have \"license\" object."
+    },
+    {
+      "given": [
+        "#API_License"
+      ],
+      "severity": "off",
+      "then": {
+        "function": "truthy",
+        "field": "url"
+      },
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "name": "license-url",
+      "description": "Info object must have \"description\" object.",
+      "message": "License object must include \"url\"."
+    },
+    {
+      "given": [
+        "#All_Markdown"
+      ],
+      "severity": "warn",
+      "then": {
+        "function": "pattern",
+        "functionOptions": {
+          "notMatch": "eval\\("
+        }
+      },
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "name": "no-eval-in-markdown",
+      "description": "Markdown descriptions must not have \"eval(\".",
+      "message": "Markdown descriptions must not have \"eval(\"."
+    },
+    {
+      "given": [
+        "#All_Markdown"
+      ],
+      "severity": "warn",
+      "then": {
+        "function": "pattern",
+        "functionOptions": {
+          "notMatch": "<script"
+        }
+      },
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "name": "no-script-tags-in-markdown",
+      "description": "Markdown descriptions must not have \"eval(\".",
+      "message": "Markdown descriptions must not have \"<script>\" tags."
+    },
+    {
+      "given": [
+        "#API_Tags"
+      ],
+      "severity": "off",
+      "then": {
+        "function": "alphabetical",
+        "functionOptions": {
+          "keyedBy": "name"
+        }
+      },
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "name": "openapi-tags-alphabetical",
+      "description": "OpenAPI object must have alphabetical \"tags\".",
+      "message": "OpenAPI object must have alphabetical \"tags\"."
+    },
+    {
+      "given": [
+        "#API_Tags"
+      ],
+      "severity": "off",
+      "then": {
+        "function": "schema",
+        "functionOptions": {
+          "schema": {
+            "type": "array",
+            "minItems": 1
+          }
+        }
+      },
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "name": "openapi-tags",
+      "description": "OpenAPI object must have non-empty \"tags\" array.",
+      "message": "OpenAPI object must have non-empty \"tags\" array."
+    },
+    {
+      "given": [
+        "#Operation_Object"
+      ],
+      "severity": "warn",
+      "then": {
+        "function": "truthy",
+        "field": "description"
+      },
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "name": "operation-description",
+      "description": "Operation \"description\" must be present and non-empty string.",
+      "message": "Operation \"description\" must be present and non-empty string."
+    },
+    {
+      "given": [
+        "#Operation_Object"
+      ],
+      "severity": "warn",
+      "then": {
+        "function": "truthy",
+        "field": "operationId"
+      },
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "name": "operation-operationId",
+      "description": "Operation must have \"operationId\".",
+      "message": "Operation must have \"operationId\"."
+    },
+    {
+      "given": [
+        "#Operation_Object"
+      ],
+      "severity": "error",
+      "then": {
+        "function": "pattern",
+        "functionOptions": {
+          "match": "^[A-Za-z0-9-._~:/?#\\[\\]@!\\$&'()*+,;=]*$"
+        },
+        "field": "operationId"
+      },
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "name": "operation-operationId-valid-in-url",
+      "description": "operationId must not characters that are invalid when used in URL.",
+      "message": "operationId must not characters that are invalid when used in URL."
+    },
+    {
+      "given": [
+        "#API_Tags"
+      ],
+      "severity": "off",
+      "then": {
+        "function": "length",
+        "functionOptions": {
+          "max": 1
+        }
+      },
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "name": "operation-singular-tag",
+      "description": "Operation must not have more than a single tag.",
+      "message": "Operation must not have more than a single tag."
+    },
+    {
+      "given": [
+        "#Operation_Object"
+      ],
+      "severity": "warn",
+      "then": {
+        "function": "length",
+        "functionOptions": {
+          "max": null,
+          "min": 1
+        },
+        "field": "tags"
+      },
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "name": "operation-tags",
+      "description": "Operation must not have more than a single tag.",
+      "message": "Operation must have non-empty \"tags\" array."
+    },
+    {
+      "given": [
+        "#Path_Item"
+      ],
+      "severity": "error",
+      "then": {
+        "function": "pattern",
+        "functionOptions": {
+          "notMatch": "{}"
+        },
+        "field": "@key"
+      },
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "name": "path-declarations-must-exist",
+      "description": "Path parameter declarations must not be empty, ex.`/given/{}` is invalid.",
+      "message": "Path parameter declarations must not be empty, ex.\"/given/{}\" is invalid."
+    },
+    {
+      "given": [
+        "#API_Contact"
+      ],
+      "severity": "off",
+      "then": {
+        "function": "truthy",
+        "field": "name"
+      },
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "name": "contact-name",
+      "description": "Contact object must have \"name\"",
+      "message": "Contact object must have \"name\""
+    },
+    {
+      "given": [
+        "#Path_Object"
+      ],
+      "severity": "error",
+      "then": {
+        "function": "pattern",
+        "functionOptions": {
+          "notMatch": ".+\\/$"
+        },
+        "field": "@key"
+      },
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "name": "path-keys-no-trailing-slash",
+      "description": "Path must not end with slash.",
+      "message": "Path must not end with slash."
+    },
+    {
+      "given": [
+        "#Path_Object"
+      ],
+      "severity": "warn",
+      "then": {
+        "function": "pattern",
+        "functionOptions": {
+          "notMatch": "\\?"
+        },
+        "field": "@key"
+      },
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "name": "path-not-include-query",
+      "description": "Path must not include query string.",
+      "message": "Path must not include query string."
+    },
+    {
+      "given": [
+        "#API_Document"
+      ],
+      "severity": "off",
+      "then": {
+        "function": "truthy",
+        "field": "tags[*].description"
+      },
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "name": "tag-description",
+      "description": "Tag object must have `description`.",
+      "message": "Tag object must have \"description\"."
+    },
+    {
+      "given": [
+        "#API_Server"
+      ],
+      "severity": "warn",
+      "then": {
+        "function": "schema",
+        "functionOptions": {
+          "schema": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object"
+            }
+          },
+          "dialect": "draft7"
+        }
+      },
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "name": "api-servers",
+      "description": "Server must be present.",
+      "message": "Server must be present."
+    },
+    {
+      "given": [
+        "#API_Server_URL"
+      ],
+      "severity": "warn",
+      "then": {
+        "function": "pattern",
+        "functionOptions": {
+          "notMatch": "/$"
+        }
+      },
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "name": "server-trailing-slash",
+      "description": "Server URL must not have trailing slash.",
+      "message": "Server URL must not have trailing slash"
+    }
+  ],
+  "inheritedTargets": [
+    {
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "description": "The complete API specification document. This can be used to target any part of the OpenAPI document using **field**.\n\n*Use this if you don't find specific targets that cater to your usecase.* ",
+      "name": "API_Document",
+      "targets": [
+        {
+          "formats": [
+            "oas2"
+          ],
+          "given": "$"
+        },
+        {
+          "formats": [
+            "oas3"
+          ],
+          "given": "$"
+        }
+      ]
+    },
+    {
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "description": "The top level description in an API document",
+      "name": "API_Description",
+      "targets": [
+        {
+          "formats": [
+            "oas2"
+          ],
+          "given": "$.info.description"
+        },
+        {
+          "formats": [
+            "oas3"
+          ],
+          "given": "$.info.description"
+        }
+      ]
+    },
+    {
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "description": "The complete operation object. Use it in combo with field object.",
+      "name": "Operation_Object",
+      "targets": [
+        {
+          "formats": [
+            "oas2"
+          ],
+          "given": "#Path_Object[get,put,post,delete,options,head,patch,trace]"
+        },
+        {
+          "formats": [
+            "oas3"
+          ],
+          "given": "#Path_Object[get,put,post,delete,options,head,patch,trace]"
+        }
+      ]
+    },
+    {
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "description": "Responses for all operations including get, put, post, delete, options, head, patch, trace.",
+      "name": "Operation_Responses",
+      "targets": [
+        {
+          "formats": [
+            "oas2"
+          ],
+          "given": "#Operation_Object.responses"
+        },
+        {
+          "formats": [
+            "oas3"
+          ],
+          "given": "#Operation_Object.responses"
+        }
+      ]
+    },
+    {
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "name": "Path_Item",
+      "targets": [
+        {
+          "formats": [
+            "oas2"
+          ],
+          "given": "$.paths[*]"
+        },
+        {
+          "formats": [
+            "oas3"
+          ],
+          "given": "$.paths[*]"
+        }
+      ]
+    },
+    {
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "description": "The top level description in an API document",
+      "name": "API_Contact",
+      "targets": [
+        {
+          "formats": [
+            "oas2"
+          ],
+          "given": "$.info.contact"
+        },
+        {
+          "formats": [
+            "oas3"
+          ],
+          "given": "$.info.contact"
+        }
+      ]
+    },
+    {
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "description": "The top level description in an API document",
+      "name": "API_License",
+      "targets": [
+        {
+          "formats": [
+            "oas2"
+          ],
+          "given": "$.info.license"
+        },
+        {
+          "formats": [
+            "oas3"
+          ],
+          "given": "$.info.license"
+        }
+      ]
+    },
+    {
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "description": "All markdown descriptions across the document.",
+      "name": "All_Markdown",
+      "targets": [
+        {
+          "formats": [
+            "oas2"
+          ],
+          "given": "$..[description,title]"
+        },
+        {
+          "formats": [
+            "oas3"
+          ],
+          "given": "$..[description,title]"
+        }
+      ]
+    },
+    {
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "description": "Tags on an API object",
+      "name": "API_Tags",
+      "targets": [
+        {
+          "formats": [
+            "oas2"
+          ],
+          "given": "$. tags"
+        },
+        {
+          "formats": [
+            "oas3"
+          ],
+          "given": "$.tags"
+        }
+      ]
+    },
+    {
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "description": "API hosts defined in the API specification",
+      "name": "API_Server",
+      "targets": [
+        {
+          "formats": [
+            "oas3"
+          ],
+          "given": "$.servers"
+        },
+        {
+          "formats": [
+            "oas2"
+          ],
+          "given": "$.host"
+        }
+      ]
+    },
+    {
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "description": "All responses (object) in an API",
+      "name": "Response_All_Object",
+      "targets": [
+        {
+          "formats": [
+            "oas2"
+          ],
+          "given": "$.responses"
+        },
+        {
+          "formats": [
+            "oas2"
+          ],
+          "given": "#Operation_Responses"
+        },
+        {
+          "formats": [
+            "oas3"
+          ],
+          "given": "$.components.responses"
+        },
+        {
+          "formats": [
+            "oas3"
+          ],
+          "given": "#Operation_Responses"
+        }
+      ]
+    },
+    {
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "description": "API host urls defined in the API specification",
+      "name": "API_Server_URL",
+      "targets": [
+        {
+          "formats": [
+            "oas3"
+          ],
+          "given": "$.servers[*].url"
+        },
+        {
+          "formats": [
+            "oas2"
+          ],
+          "given": "$.host"
+        }
+      ]
+    },
+    {
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "description": "All references throughout the API",
+      "name": "All_Ref",
+      "targets": [
+        {
+          "formats": [
+            "oas2"
+          ],
+          "given": "$..[?(@property === '$ref')]"
+        },
+        {
+          "formats": [
+            "oas3"
+          ],
+          "given": "$..[?(@property === '$ref')]"
+        }
+      ]
+    },
+    {
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "description": "All references throughout the API",
+      "name": "All_Enum",
+      "targets": [
+        {
+          "formats": [
+            "oas2"
+          ],
+          "given": "$..[?(@ && @.enum && @.type)]"
+        },
+        {
+          "formats": [
+            "oas3"
+          ],
+          "given": "$..[?(@ && @.enum && @.type)]"
+        }
+      ]
+    },
+    {
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "description": "All request parameters",
+      "name": "Request_Parameter_All",
+      "targets": [
+        {
+          "formats": [
+            "oas2"
+          ],
+          "given": "$..parameters[*]"
+        },
+        {
+          "formats": [
+            "oas3"
+          ],
+          "given": "$..parameters[*]"
+        }
+      ]
+    },
+    {
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "description": "All request query parameters",
+      "name": "Request_Parameter_Query",
+      "targets": [
+        {
+          "formats": [
+            "oas2"
+          ],
+          "given": "$..parameters[?(@.in==\"query\")]"
+        },
+        {
+          "formats": [
+            "oas3"
+          ],
+          "given": "$..parameters[?(@.in==\"query\")]"
+        }
+      ]
+    },
+    {
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "description": "All request header parameters",
+      "name": "Request_Parameter_Header",
+      "targets": [
+        {
+          "formats": [
+            "oas2"
+          ],
+          "given": "$..parameters[?(@.in==\"header\")]"
+        },
+        {
+          "formats": [
+            "oas3"
+          ],
+          "given": "$..parameters[?(@.in==\"header\")]"
+        }
+      ]
+    },
+    {
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "description": "All request cookie parameters",
+      "name": "Request_Parameter_Cookie",
+      "targets": [
+        {
+          "formats": [
+            "oas2"
+          ],
+          "given": "$..parameters[?(@.in==\"cookie\")]"
+        },
+        {
+          "formats": [
+            "oas3"
+          ],
+          "given": "$..parameters[?(@.in==\"cookie\")]"
+        }
+      ]
+    },
+    {
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "description": "All request path parameters",
+      "name": "Request_Parameter_Path",
+      "targets": [
+        {
+          "formats": [
+            "oas2"
+          ],
+          "given": "$..parameters[?(@.in==\"path\")]"
+        },
+        {
+          "formats": [
+            "oas3"
+          ],
+          "given": "$..parameters[?(@.in==\"path\")]"
+        }
+      ]
+    },
+    {
+      "extendedFrom": "cHJqOjEyMzU4Ng@18",
+      "description": "Path object. Usually used to target the Path key e.g. `/users/{userId}`",
+      "name": "Path_Object",
+      "targets": [
+        {
+          "formats": [
+            "oas2"
+          ],
+          "given": "$.paths"
+        },
+        {
+          "formats": [
+            "oas3"
+          ],
+          "given": "$.paths"
+        }
+      ]
+    }
+  ],
+  "library": {
+    "cHJqOjEyMzU4Ng@18": {
+      "description": "This is Stoplight's built-in style guide, containing style and validation rules for OAS (OpenAPI Specification).\n\n> This Style Guide is applied to all new projects by default.",
+      "formats": [
+        "oas2",
+        "oas3",
+        "oas3.0",
+        "oas3.1"
+      ],
+      "aliases": {
+        "API_Document": {
+          "description": "The complete API specification document. This can be used to target any part of the OpenAPI document using **field**.\n\n*Use this if you don't find specific targets that cater to your usecase.* ",
+          "name": "API_Document",
+          "targets": [
+            {
+              "formats": [
+                "oas2"
+              ],
+              "given": "$"
+            },
+            {
+              "formats": [
+                "oas3"
+              ],
+              "given": "$"
+            }
+          ]
+        },
+        "API_Description": {
+          "description": "The top level description in an API document",
+          "name": "API_Description",
+          "targets": [
+            {
+              "formats": [
+                "oas2"
+              ],
+              "given": "$.info.description"
+            },
+            {
+              "formats": [
+                "oas3"
+              ],
+              "given": "$.info.description"
+            }
+          ]
+        },
+        "Operation_Object": {
+          "description": "The complete operation object. Use it in combo with field object.",
+          "name": "Operation_Object",
+          "targets": [
+            {
+              "formats": [
+                "oas2"
+              ],
+              "given": "#Path_Object[get,put,post,delete,options,head,patch,trace]"
+            },
+            {
+              "formats": [
+                "oas3"
+              ],
+              "given": "#Path_Object[get,put,post,delete,options,head,patch,trace]"
+            }
+          ]
+        },
+        "Operation_Responses": {
+          "description": "Responses for all operations including get, put, post, delete, options, head, patch, trace.",
+          "name": "Operation_Responses",
+          "targets": [
+            {
+              "formats": [
+                "oas2"
+              ],
+              "given": "#Operation_Object.responses"
+            },
+            {
+              "formats": [
+                "oas3"
+              ],
+              "given": "#Operation_Object.responses"
+            }
+          ]
+        },
+        "Path_Item": {
+          "name": "Path_Item",
+          "targets": [
+            {
+              "formats": [
+                "oas2"
+              ],
+              "given": "$.paths[*]"
+            },
+            {
+              "formats": [
+                "oas3"
+              ],
+              "given": "$.paths[*]"
+            }
+          ]
+        },
+        "API_Contact": {
+          "description": "The top level description in an API document",
+          "name": "API_Contact",
+          "targets": [
+            {
+              "formats": [
+                "oas2"
+              ],
+              "given": "$.info.contact"
+            },
+            {
+              "formats": [
+                "oas3"
+              ],
+              "given": "$.info.contact"
+            }
+          ]
+        },
+        "API_License": {
+          "description": "The top level description in an API document",
+          "name": "API_License",
+          "targets": [
+            {
+              "formats": [
+                "oas2"
+              ],
+              "given": "$.info.license"
+            },
+            {
+              "formats": [
+                "oas3"
+              ],
+              "given": "$.info.license"
+            }
+          ]
+        },
+        "All_Markdown": {
+          "description": "All markdown descriptions across the document.",
+          "name": "All_Markdown",
+          "targets": [
+            {
+              "formats": [
+                "oas2"
+              ],
+              "given": "$..[description,title]"
+            },
+            {
+              "formats": [
+                "oas3"
+              ],
+              "given": "$..[description,title]"
+            }
+          ]
+        },
+        "API_Tags": {
+          "description": "Tags on an API object",
+          "name": "API_Tags",
+          "targets": [
+            {
+              "formats": [
+                "oas2"
+              ],
+              "given": "$. tags"
+            },
+            {
+              "formats": [
+                "oas3"
+              ],
+              "given": "$.tags"
+            }
+          ]
+        },
+        "API_Server": {
+          "description": "API hosts defined in the API specification",
+          "name": "API_Server",
+          "targets": [
+            {
+              "formats": [
+                "oas3"
+              ],
+              "given": "$.servers"
+            },
+            {
+              "formats": [
+                "oas2"
+              ],
+              "given": "$.host"
+            }
+          ]
+        },
+        "Response_All_Object": {
+          "description": "All responses (object) in an API",
+          "name": "Response_All_Object",
+          "targets": [
+            {
+              "formats": [
+                "oas2"
+              ],
+              "given": "$.responses"
+            },
+            {
+              "formats": [
+                "oas2"
+              ],
+              "given": "#Operation_Responses"
+            },
+            {
+              "formats": [
+                "oas3"
+              ],
+              "given": "$.components.responses"
+            },
+            {
+              "formats": [
+                "oas3"
+              ],
+              "given": "#Operation_Responses"
+            }
+          ]
+        },
+        "API_Server_URL": {
+          "description": "API host urls defined in the API specification",
+          "name": "API_Server_URL",
+          "targets": [
+            {
+              "formats": [
+                "oas3"
+              ],
+              "given": "$.servers[*].url"
+            },
+            {
+              "formats": [
+                "oas2"
+              ],
+              "given": "$.host"
+            }
+          ]
+        },
+        "All_Ref": {
+          "description": "All references throughout the API",
+          "name": "All_Ref",
+          "targets": [
+            {
+              "formats": [
+                "oas2"
+              ],
+              "given": "$..[?(@property === '$ref')]"
+            },
+            {
+              "formats": [
+                "oas3"
+              ],
+              "given": "$..[?(@property === '$ref')]"
+            }
+          ]
+        },
+        "All_Enum": {
+          "description": "All references throughout the API",
+          "name": "All_Enum",
+          "targets": [
+            {
+              "formats": [
+                "oas2"
+              ],
+              "given": "$..[?(@ && @.enum && @.type)]"
+            },
+            {
+              "formats": [
+                "oas3"
+              ],
+              "given": "$..[?(@ && @.enum && @.type)]"
+            }
+          ]
+        },
+        "Request_Parameter_All": {
+          "description": "All request parameters",
+          "name": "Request_Parameter_All",
+          "targets": [
+            {
+              "formats": [
+                "oas2"
+              ],
+              "given": "$..parameters[*]"
+            },
+            {
+              "formats": [
+                "oas3"
+              ],
+              "given": "$..parameters[*]"
+            }
+          ]
+        },
+        "Request_Parameter_Query": {
+          "description": "All request query parameters",
+          "name": "Request_Parameter_Query",
+          "targets": [
+            {
+              "formats": [
+                "oas2"
+              ],
+              "given": "$..parameters[?(@.in==\"query\")]"
+            },
+            {
+              "formats": [
+                "oas3"
+              ],
+              "given": "$..parameters[?(@.in==\"query\")]"
+            }
+          ]
+        },
+        "Request_Parameter_Header": {
+          "description": "All request header parameters",
+          "name": "Request_Parameter_Header",
+          "targets": [
+            {
+              "formats": [
+                "oas2"
+              ],
+              "given": "$..parameters[?(@.in==\"header\")]"
+            },
+            {
+              "formats": [
+                "oas3"
+              ],
+              "given": "$..parameters[?(@.in==\"header\")]"
+            }
+          ]
+        },
+        "Request_Parameter_Cookie": {
+          "description": "All request cookie parameters",
+          "name": "Request_Parameter_Cookie",
+          "targets": [
+            {
+              "formats": [
+                "oas2"
+              ],
+              "given": "$..parameters[?(@.in==\"cookie\")]"
+            },
+            {
+              "formats": [
+                "oas3"
+              ],
+              "given": "$..parameters[?(@.in==\"cookie\")]"
+            }
+          ]
+        },
+        "Request_Parameter_Path": {
+          "description": "All request path parameters",
+          "name": "Request_Parameter_Path",
+          "targets": [
+            {
+              "formats": [
+                "oas2"
+              ],
+              "given": "$..parameters[?(@.in==\"path\")]"
+            },
+            {
+              "formats": [
+                "oas3"
+              ],
+              "given": "$..parameters[?(@.in==\"path\")]"
+            }
+          ]
+        },
+        "Path_Object": {
+          "description": "Path object. Usually used to target the Path key e.g. `/users/{userId}`",
+          "name": "Path_Object",
+          "targets": [
+            {
+              "formats": [
+                "oas2"
+              ],
+              "given": "$.paths"
+            },
+            {
+              "formats": [
+                "oas3"
+              ],
+              "given": "$.paths"
+            }
+          ]
+        }
+      },
+      "rules": {
+        "contact-url": {
+          "given": [
+            "#API_Contact"
+          ],
+          "severity": "off",
+          "then": {
+            "function": "truthy",
+            "field": "url"
+          },
+          "name": "contact-url",
+          "description": "Contact object must have \"url\"",
+          "message": "Contact object must have \"url\""
+        },
+        "contact-email": {
+          "given": [
+            "#API_Contact"
+          ],
+          "severity": "off",
+          "then": {
+            "function": "truthy",
+            "field": "email"
+          },
+          "name": "contact-email",
+          "description": "Contact object must have \"email\"",
+          "message": "Contact object must have \"email\""
+        },
+        "info-contact": {
+          "given": [
+            "#API_Document"
+          ],
+          "severity": "warn",
+          "then": {
+            "function": "truthy",
+            "field": "info.contact"
+          },
+          "name": "info-contact",
+          "description": "Info object must have \"contact\" object.",
+          "message": "Info object must have \"contact\" object."
+        },
+        "info-description": {
+          "given": [
+            "#API_Document"
+          ],
+          "severity": "warn",
+          "then": {
+            "function": "truthy",
+            "field": "info.description"
+          },
+          "name": "info-description",
+          "description": "Info object must have \"description\" object.",
+          "message": "Info object must have \"description\" object."
+        },
+        "info-license": {
+          "given": [
+            "#API_Document"
+          ],
+          "severity": "off",
+          "then": {
+            "function": "truthy",
+            "field": "info.license"
+          },
+          "name": "info-license",
+          "description": "Info object must have \"description\" object.",
+          "message": "Info object must have \"license\" object."
+        },
+        "license-url": {
+          "given": [
+            "#API_License"
+          ],
+          "severity": "off",
+          "then": {
+            "function": "truthy",
+            "field": "url"
+          },
+          "name": "license-url",
+          "description": "Info object must have \"description\" object.",
+          "message": "License object must include \"url\"."
+        },
+        "no-eval-in-markdown": {
+          "given": [
+            "#All_Markdown"
+          ],
+          "severity": "warn",
+          "then": {
+            "function": "pattern",
+            "functionOptions": {
+              "notMatch": "eval\\("
+            }
+          },
+          "name": "no-eval-in-markdown",
+          "description": "Markdown descriptions must not have \"eval(\".",
+          "message": "Markdown descriptions must not have \"eval(\"."
+        },
+        "no-script-tags-in-markdown": {
+          "given": [
+            "#All_Markdown"
+          ],
+          "severity": "warn",
+          "then": {
+            "function": "pattern",
+            "functionOptions": {
+              "notMatch": "<script"
+            }
+          },
+          "name": "no-script-tags-in-markdown",
+          "description": "Markdown descriptions must not have \"eval(\".",
+          "message": "Markdown descriptions must not have \"<script>\" tags."
+        },
+        "openapi-tags-alphabetical": {
+          "given": [
+            "#API_Tags"
+          ],
+          "severity": "off",
+          "then": {
+            "function": "alphabetical",
+            "functionOptions": {
+              "keyedBy": "name"
+            }
+          },
+          "name": "openapi-tags-alphabetical",
+          "description": "OpenAPI object must have alphabetical \"tags\".",
+          "message": "OpenAPI object must have alphabetical \"tags\"."
+        },
+        "openapi-tags": {
+          "given": [
+            "#API_Tags"
+          ],
+          "severity": "off",
+          "then": {
+            "function": "schema",
+            "functionOptions": {
+              "schema": {
+                "type": "array",
+                "minItems": 1
+              }
+            }
+          },
+          "name": "openapi-tags",
+          "description": "OpenAPI object must have non-empty \"tags\" array.",
+          "message": "OpenAPI object must have non-empty \"tags\" array."
+        },
+        "operation-description": {
+          "given": [
+            "#Operation_Object"
+          ],
+          "severity": "warn",
+          "then": {
+            "function": "truthy",
+            "field": "description"
+          },
+          "name": "operation-description",
+          "description": "Operation \"description\" must be present and non-empty string.",
+          "message": "Operation \"description\" must be present and non-empty string."
+        },
+        "operation-operationId": {
+          "given": [
+            "#Operation_Object"
+          ],
+          "severity": "warn",
+          "then": {
+            "function": "truthy",
+            "field": "operationId"
+          },
+          "name": "operation-operationId",
+          "description": "Operation must have \"operationId\".",
+          "message": "Operation must have \"operationId\"."
+        },
+        "operation-operationId-valid-in-url": {
+          "given": [
+            "#Operation_Object"
+          ],
+          "severity": "error",
+          "then": {
+            "function": "pattern",
+            "functionOptions": {
+              "match": "^[A-Za-z0-9-._~:/?#\\[\\]@!\\$&'()*+,;=]*$"
+            },
+            "field": "operationId"
+          },
+          "name": "operation-operationId-valid-in-url",
+          "description": "operationId must not characters that are invalid when used in URL.",
+          "message": "operationId must not characters that are invalid when used in URL."
+        },
+        "operation-singular-tag": {
+          "given": [
+            "#API_Tags"
+          ],
+          "severity": "off",
+          "then": {
+            "function": "length",
+            "functionOptions": {
+              "max": 1
+            }
+          },
+          "name": "operation-singular-tag",
+          "description": "Operation must not have more than a single tag.",
+          "message": "Operation must not have more than a single tag."
+        },
+        "operation-tags": {
+          "given": [
+            "#Operation_Object"
+          ],
+          "severity": "warn",
+          "then": {
+            "function": "length",
+            "functionOptions": {
+              "max": null,
+              "min": 1
+            },
+            "field": "tags"
+          },
+          "name": "operation-tags",
+          "description": "Operation must not have more than a single tag.",
+          "message": "Operation must have non-empty \"tags\" array."
+        },
+        "path-declarations-must-exist": {
+          "given": [
+            "#Path_Item"
+          ],
+          "severity": "error",
+          "then": {
+            "function": "pattern",
+            "functionOptions": {
+              "notMatch": "{}"
+            },
+            "field": "@key"
+          },
+          "name": "path-declarations-must-exist",
+          "description": "Path parameter declarations must not be empty, ex.`/given/{}` is invalid.",
+          "message": "Path parameter declarations must not be empty, ex.\"/given/{}\" is invalid."
+        },
+        "contact-name": {
+          "given": [
+            "#API_Contact"
+          ],
+          "severity": "off",
+          "then": {
+            "function": "truthy",
+            "field": "name"
+          },
+          "name": "contact-name",
+          "description": "Contact object must have \"name\"",
+          "message": "Contact object must have \"name\""
+        },
+        "path-keys-no-trailing-slash": {
+          "given": [
+            "#Path_Object"
+          ],
+          "severity": "error",
+          "then": {
+            "function": "pattern",
+            "functionOptions": {
+              "notMatch": ".+\\/$"
+            },
+            "field": "@key"
+          },
+          "name": "path-keys-no-trailing-slash",
+          "description": "Path must not end with slash.",
+          "message": "Path must not end with slash."
+        },
+        "path-not-include-query": {
+          "given": [
+            "#Path_Object"
+          ],
+          "severity": "warn",
+          "then": {
+            "function": "pattern",
+            "functionOptions": {
+              "notMatch": "\\?"
+            },
+            "field": "@key"
+          },
+          "name": "path-not-include-query",
+          "description": "Path must not include query string.",
+          "message": "Path must not include query string."
+        },
+        "tag-description": {
+          "given": [
+            "#API_Document"
+          ],
+          "severity": "off",
+          "then": {
+            "function": "truthy",
+            "field": "tags[*].description"
+          },
+          "name": "tag-description",
+          "description": "Tag object must have `description`.",
+          "message": "Tag object must have \"description\"."
+        },
+        "api-servers": {
+          "given": [
+            "#API_Server"
+          ],
+          "severity": "warn",
+          "then": {
+            "function": "schema",
+            "functionOptions": {
+              "schema": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object"
+                }
+              },
+              "dialect": "draft7"
+            }
+          },
+          "name": "api-servers",
+          "description": "Server must be present.",
+          "message": "Server must be present."
+        },
+        "server-trailing-slash": {
+          "given": [
+            "#API_Server_URL"
+          ],
+          "severity": "warn",
+          "then": {
+            "function": "pattern",
+            "functionOptions": {
+              "notMatch": "/$"
+            }
+          },
+          "name": "server-trailing-slash",
+          "description": "Server URL must not have trailing slash.",
+          "message": "Server URL must not have trailing slash"
+        }
+      },
+      "extendedDefault": false
+    }
+  },
+  "extendedDefault": true
+}

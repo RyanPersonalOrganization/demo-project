@@ -61,7 +61,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: ./device.v1.json
+                  $ref: ./models/device.v1.json
               examples:
                 devices:
                   value:
@@ -133,7 +133,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
               examples:
                 example-1:
                   value:
@@ -153,7 +153,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
               examples:
                 example-1:
                   value:
@@ -164,37 +164,37 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
         '404':
           description: Not Found
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
         '500':
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
         '502':
           description: Bad Gateway
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
         '504':
           description: Gateway Timeout
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
         default:
           description: Error
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
       operationId: get-api-devices
       description: |-
         <span style="font-size: 1.5em; color: #5D535E;">
@@ -237,7 +237,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
               examples:
                 Created:
                   value:
@@ -248,49 +248,49 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
         '401':
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
         '403':
           description: Forbidden
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
         '404':
           description: Not Found
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
         '500':
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
         '502':
           description: Bad Gateway
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
         '504':
           description: Gateway Timeout
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
         default:
           description: Error
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
       operationId: post-api-devices
       description: |-
         ![Stoplight](https://f.hubspotusercontent10.net/hubfs/4892910/Stoplight-Horizontal-Logo.png)
@@ -308,9 +308,9 @@ paths:
               type: object
               properties:
                 device:
-                  $ref: ./device.v1.json
+                  $ref: ./models/device.v1.json
                 location:
-                  $ref: ./location.v1.json
+                  $ref: ./models/location.v1.json
                 additionalInfo:
                   $ref: '#/components/schemas/additionalInfo'
                 attributes:
@@ -326,55 +326,55 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
         '400':
           description: Bad Request
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
         '401':
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
         '403':
           description: Forbidden
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
         '404':
           description: Not Found
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
         '500':
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
         '502':
           description: Bad Gateway
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
         '504':
           description: Gateway Timeout
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
         default:
           description: Error
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
       operationId: put-api-devices
       description: |-
         ![Stoplight](https://f.hubspotusercontent10.net/hubfs/4892910/Stoplight-Horizontal-Logo.png)
@@ -389,7 +389,7 @@ paths:
         content:
           application/xml:
             schema:
-              $ref: ./device.v1.json
+              $ref: ./models/device.v1.json
         description: 'Beside the fields the user wishes to update, the only field required by this operation is `''deviceid''`, however if left empty it will default to `''all''`. Such a request will result in error code `''400 Bad Request''` as this operation only allows updating one device per request.'
     delete:
       summary: removeDevice
@@ -424,48 +424,48 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
         '401':
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
         '403':
           description: Forbidden
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
         '404':
           description: Not Found
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
         '500':
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
         '502':
           description: Bad Gateway
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
         '504':
           description: Gateway Timeout
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
       requestBody:
         content:
           application/json:
             schema:
-              $ref: ./device.v1.json
+              $ref: ./models/device.v1.json
     parameters:
       - schema:
           type: string
@@ -483,7 +483,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
       operationId: get-api-myDevices
       description: Add a new description
       tags:
@@ -502,7 +502,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
       operationId: get-api-myDevices3
       description: Add a new description
       tags:
@@ -517,7 +517,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
       operationId: get-api-myDevices4
       description: Add a new description
       tags:
@@ -534,7 +534,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
       operationId: get-api-myDevices6
       description: Add a new description
     parameters: []
@@ -569,7 +569,7 @@ components:
         id:
           type: string
         name:
-          $ref: ./user.v1.json
+          $ref: ./models/user.v1.json
         types:
           type: array
           items:
@@ -690,7 +690,7 @@ components:
             type: object
             properties:
               id:
-                $ref: ./responseCode.v1.yaml
+                $ref: ./models/responseCode.v1.yaml
           examples:
             example-1:
               value:
@@ -702,7 +702,7 @@ components:
       content:
         application/json:
           schema:
-            $ref: ./responseCode.v1.yaml
+            $ref: ./models/responseCode.v1.yaml
           examples:
             example-1:
               value:
