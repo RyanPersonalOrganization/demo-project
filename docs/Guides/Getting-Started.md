@@ -6,6 +6,8 @@ tags: [Guides]
 
 ## Intended Audience
 
+[Stoplight Flavoured Markdown](https://meta.stoplight.io/docs/studio/docs/Documentation/03a-stoplight-flavored-markdown.md)
+
 This guide is directed at **HTTP-based API** designers and writers wishing to benefit from having their API formalized in an **OpenAPI Description document**.
 
 Machine-readable API descriptions are ubiquitous nowadays and **OpenAPI** is **the most broadly adopted industry standard for describing new APIs**. It is therefore worth learning it and getting it right from the start.

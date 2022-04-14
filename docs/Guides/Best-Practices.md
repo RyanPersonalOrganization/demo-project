@@ -11,9 +11,12 @@ However, they greatly simplify creating and maintaining OpenAPI documents, so th
 We automatically LINT your APIs.  
 
 Here are some more assets
+- [Stoplight Flavoured Markdown](https://meta.stoplight.io/docs/studio/docs/Documentation/03a-stoplight-flavored-markdown.md)
 - https://github.com/openapi-contrib/style-guides
 - https://meta.stoplight.io/docs/spectral/ZG9jOjExNw-open-api-rules
 - https://meta.stoplight.io/docs/spectral/ZG9jOjI1MTg1-spectral-cli
+
+
 
 ## Use a Design-First Approach
 

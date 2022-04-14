@@ -13,7 +13,7 @@ tags: [Guides]
 
 [**Backed By This GIT Repo!**](https://github.com/stoplightio/stoplight-platform-demo)
 
-Please Slack @Andrew Mathes or email andrew@stoplight.io for access.
+[Stoplight Flavoured Markdown](https://meta.stoplight.io/docs/studio/docs/Documentation/03a-stoplight-flavored-markdown.md)
 
 ---
 
