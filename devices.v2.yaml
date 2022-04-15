@@ -542,8 +542,6 @@ paths:
   /api/deviceStatus:
     get:
       summary: deviceStatus
-      tags:
-        - scaleApis
       responses:
         '200':
           description: Success
@@ -554,6 +552,8 @@ paths:
       operationId: get-api-myDevices7
       description: Add a new description
       x-stoplightSecretExtension: x-stoplightSecretValue
+      tags:
+        - IOT
     parameters: []
 components:
   schemas:
