@@ -553,7 +553,7 @@ paths:
       description: Add a new description
       x-stoplightSecretExtension: x-stoplightSecretValue
       tags:
-        - IOT
+        - myDeviceTags
     parameters: []
 components:
   schemas:
