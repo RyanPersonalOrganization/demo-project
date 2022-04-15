@@ -224,6 +224,7 @@ paths:
       x-securityBTtest: S12345
       tags:
         - devices
+        - CheckOut
       security:
         - StoplightDemo Key: []
         - HTTP Auth: []
