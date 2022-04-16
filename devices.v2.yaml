@@ -505,16 +505,19 @@ paths:
               schema:
                 type: object
                 properties:
-                  ref1:
-                    $ref: ./models/device.v1.json
-                  ref2:
-                    $ref: ./models/device.v1.json
-                  ref3:
-                    $ref: ./models/device.v1.json
+                  devices:
+                    type: array
+                    items:
+                      $ref: ./models/device.v1.json
       operationId: get-api-myDevices3
       description: Add a new description
       tags:
         - scaleApis
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: limit
     parameters: []
   /api/bulk-devices:
     get:
