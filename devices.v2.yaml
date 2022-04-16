@@ -503,19 +503,14 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    deviceName:
-                      type: string
-                    deviceType:
-                      type:
-                        - number
-                        - integer
-                    deviceDate:
-                      type: string
-                      format: date
+                type: object
+                properties:
+                  '1':
+                    $ref: '#/components/schemas/smallDeviceModel'
+                  '2':
+                    $ref: '#/components/schemas/smallDeviceModel'
+                  '3':
+                    $ref: '#/components/schemas/smallDeviceModel'
       operationId: get-api-myDevices3
       description: Add a new description
       tags:
@@ -602,6 +597,19 @@ components:
           type: string
         scheme:
           type: string
+    smallDeviceModel:
+      title: smallDeviceModel
+      type: object
+      properties:
+        name:
+          type: string
+        type:
+          type:
+            - number
+            - integer
+        date:
+          type: string
+          format: date
   parameters:
     accountid:
       schema:
