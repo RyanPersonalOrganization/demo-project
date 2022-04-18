@@ -4,6 +4,8 @@ tags: [requirements, CheckOut]
 
 # API Requirements
 
+[Stoplight Flavoured Markdown](https://meta.stoplight.io/docs/studio/docs/Documentation/03a-stoplight-flavored-markdown.md)
+
 ## Why 
 
 This API provides an interface for clients to manage robot devices.  This interface can be used from either a mobile or web interface.
