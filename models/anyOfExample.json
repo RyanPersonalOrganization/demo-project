@@ -1,0 +1,40 @@
+{
+  "title": "anyOfExample",
+  "anyOf": [
+    {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "errorString": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "errorCode": {
+          "type": "integer"
+        }
+      }
+    },
+    {
+      "properties": {
+        "errorCodes": {
+          "type": "array",
+          "items": {
+            "type": [
+              "string",
+              "number"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "description": "",
+  "type": "object"
+}

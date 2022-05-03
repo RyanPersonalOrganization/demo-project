@@ -225,14 +225,7 @@
             "oas2"
           ],
           "given": [
-            "$.responses"
-          ]
-        },
-        {
-          "formats": [
-            "oas2"
-          ],
-          "given": [
+            "$.responses",
             "#Operation_Responses"
           ]
         },
@@ -241,14 +234,7 @@
             "oas3"
           ],
           "given": [
-            "$.components.responses"
-          ]
-        },
-        {
-          "formats": [
-            "oas3"
-          ],
-          "given": [
+            "$.components.responses",
             "#Operation_Responses"
           ]
         }
