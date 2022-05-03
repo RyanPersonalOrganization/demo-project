@@ -503,14 +503,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  '1':
-                    $ref: '#/components/schemas/smallDeviceModel'
-                  '2':
-                    $ref: '#/components/schemas/smallDeviceModel'
-                  '3':
-                    $ref: '#/components/schemas/smallDeviceModel'
+                $ref: ./models/anyOfExample.json
       operationId: get-api-myDevices3
       description: Add a new description
       tags:
