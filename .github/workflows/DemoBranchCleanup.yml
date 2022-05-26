@@ -9,11 +9,8 @@ jobs:
     name: Cleanup old branches
     runs-on: ubuntu-latest
     steps:
-    
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: Set Delete Permission on Git container
-        run: git config --global --add safe.directory /github/workspace
       - name: Run delete-old-branches-action
         uses: beatlabs/delete-old-branches-action@v0.0.6
         with:
