@@ -16,7 +16,7 @@ jobs:
         with:
           repo_token: ${{ github.token }}
           date: '1 day ago'
-          dry_run: false
+          dry_run: true
           delete_tags: false
           minimum_tags: 5
           extra_protected_branch_regex: ^(demo-docs-update|endpoint-work|v.*|[0-9].*|main)$
