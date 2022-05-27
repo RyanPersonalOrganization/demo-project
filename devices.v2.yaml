@@ -560,6 +560,25 @@ paths:
       tags:
         - myDeviceTags
     parameters: []
+  /noExamplesExample:
+    get:
+      summary: Your GET endpoint
+      tags:
+        - scaleApis
+      responses: {}
+      operationId: get-noExamplesExample
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                'no':
+                  type: string
+                example:
+                  type: string
+                provided:
+                  type: string
 components:
   schemas:
     '200':
