@@ -560,7 +560,7 @@ paths:
       tags:
         - myDeviceTags
     parameters: []
-  /api/noExamplesExample:
+  '/api/noExamplesExample/{id}':
     get:
       summary: noExamplesExample
       tags:
@@ -580,19 +580,12 @@ paths:
                   example:
                     type: string
       operationId: get-noExamplesExample
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                'no':
-                  type: string
-                example:
-                  type: string
-                provided:
-                  type: string
-    parameters: []
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
 components:
   schemas:
     '200':
