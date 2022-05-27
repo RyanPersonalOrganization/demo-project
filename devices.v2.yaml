@@ -562,7 +562,7 @@ paths:
     parameters: []
   /noExamplesExample:
     get:
-      summary: Your GET endpoint
+      summary: noExamplesExample
       tags:
         - scaleApis
       responses: {}
