@@ -565,7 +565,20 @@ paths:
       summary: noExamplesExample
       tags:
         - scaleApis
-      responses: {}
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  'no':
+                    type: string
+                  response:
+                    type: string
+                  example:
+                    type: string
       operationId: get-noExamplesExample
       requestBody:
         content:
