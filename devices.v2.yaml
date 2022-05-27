@@ -560,7 +560,7 @@ paths:
       tags:
         - myDeviceTags
     parameters: []
-  /noExamplesExample:
+  /api/noExamplesExample:
     get:
       summary: noExamplesExample
       tags:
@@ -579,6 +579,7 @@ paths:
                   type: string
                 provided:
                   type: string
+    parameters: []
 components:
   schemas:
     '200':
