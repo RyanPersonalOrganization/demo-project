@@ -86,7 +86,9 @@
     },
     "storageFree": {
       "type": "number",
-      "description": "in gigabytes as described in this [data measurement chart](http://www.wu.ece.ufl.edu/links/dataRate/DataMeasurementChart.html)"
+      "description": "in gigabytes as described in this [data measurement chart](http://www.wu.ece.ufl.edu/links/dataRate/DataMeasurementChart.html)",
+      "minimum": 0,
+      "maximum": 10000
     },
     "dateCreated": {
       "type": "string",
