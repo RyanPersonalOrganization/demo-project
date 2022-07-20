@@ -201,6 +201,8 @@ paths:
           <i class="fas fa-robot fa-xs"></i> listDevices
         </span>
 
+        [local link](docs/Guides/Best-Practices.md)
+
         Returns a list of devices for an account at a given space (or all spaces if using the default value `'all'`). A valid `'Stoplight Demo Key'` is required to authenticate, users must also specify their `'accountid'` when requesting devices. The response can be defined by limiting the number of results or sorting them as required.
 
         If specific devices are desired, users can specify the `'deviceid'` or multiple thereof values in the header.
