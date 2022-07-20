@@ -11,6 +11,9 @@ tags: [Guides]
 </br>
 </br>
 
+
+[local link](docs/Guides/Best-Practices.md)
+
 [**Backed By This GIT Repo!**](https://github.com/stoplightio/stoplight-platform-demo)
 
 [Stoplight Flavoured Markdown](https://meta.stoplight.io/docs/studio/docs/Documentation/03a-stoplight-flavored-markdown.md)
