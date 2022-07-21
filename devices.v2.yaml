@@ -45,6 +45,8 @@ servers:
         description: default env
   - url: 'https://{env}'
     description: Actual Endpoint
+  - url: 'https://mock.{env}/v1'
+    description: new mock endpoint
 paths:
   '/api/devices/{deviceId}':
     get:
