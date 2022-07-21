@@ -41,12 +41,20 @@ servers:
     description: In Design Endpoint
     variables:
       env:
-        default: 'https://stoplight.io/mocks/demo/stoplight-platform-demo/16372165 /'
+        default: 'https://stoplight.io/mocks/demo/stoplight-platform-demo/16372165/'
         description: default env
   - url: 'https://{env}'
     description: Actual Endpoint
+    variables:
+      env:
+        default: 'https://stoplight.io/mocks/demo/stoplight-platform-demo/16372165/'
+        description: default env
   - url: 'https://mock.{env}/v1'
     description: new mock endpoint
+    variables:
+      env:
+        default: 'https://stoplight.io/mocks/demo/stoplight-platform-demo/16372165/'
+        description: default env
 paths:
   '/api/devices/{deviceId}':
     get:
