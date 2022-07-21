@@ -37,18 +37,15 @@ info:
     name: MIT
     url: 'https://opensource.org/licenses/MIT'
 servers:
-  - url: 'https://{env}'
-    description: Stoplight Device Platform
-    variables:
-      env:
-        default: stoplight_test.io
-        description: default env
   - url: 'https://staging.{env}/v1'
-    description: Staging Platform
+    description: In Design Endpoint
     variables:
       env:
-        default: stoplight_test.io
+        default: 'https://stoplight.io/mocks/demo/stoplight-platform-demo/16372165
+/'
         description: default env
+  - url: 'https://{env}'
+    description: Actual Endpoint
 paths:
   '/api/devices/{deviceId}':
     get:
