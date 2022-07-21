@@ -47,13 +47,7 @@ servers:
     description: Actual Endpoint
     variables:
       env:
-        default: 'stoplight.io/mocks/demo/stoplight-platform-demo/16372165/'
-        description: default env
-  - url: 'https://mock.{env}/v1'
-    description: new mock endpoint
-    variables:
-      env:
-        default: 'stoplight.io/mocks/demo/stoplight-platform-demo/16372165/'
+        default: 'stoplight_test.io/v1'
         description: default env
 paths:
   '/api/devices/{deviceId}':
