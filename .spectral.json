@@ -547,6 +547,10 @@
           ]
         }
       ]
+    },
+    "": {
+      "description": "",
+      "targets": []
     }
   },
   "rules": {
@@ -1241,9 +1245,20 @@
       "formats": [
         "oas3"
       ]
+    },
+    "Demo-Rule": {
+      "given": [
+        "#Response_All_Object"
+      ],
+      "severity": "error",
+      "then": {
+        "function": "truthy"
+      },
+      "message": "This rule will be triggered on error"
     }
   },
   "functions": [
+    "new-function",
     "oasDocumentSchema",
     "oasDiscriminator",
     "oasExample",
