@@ -183,7 +183,7 @@
             "oas2"
           ],
           "given": [
-            "$.tags"
+            "#Operation_Object.tags"
           ]
         },
         {
@@ -191,7 +191,7 @@
             "oas3"
           ],
           "given": [
-            "$.tags"
+            "#Operation_Object.tags"
           ]
         }
       ]
@@ -1245,16 +1245,6 @@
       "formats": [
         "oas3"
       ]
-    },
-    "Demo-Rule": {
-      "given": [
-        "#Response_All_Object"
-      ],
-      "severity": "error",
-      "then": {
-        "function": "truthy"
-      },
-      "message": "This rule will be triggered on error"
     }
   },
   "functions": [
