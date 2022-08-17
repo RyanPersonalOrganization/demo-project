@@ -547,10 +547,6 @@
           ]
         }
       ]
-    },
-    "": {
-      "description": "",
-      "targets": []
     }
   },
   "rules": {

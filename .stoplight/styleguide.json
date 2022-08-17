@@ -7,11 +7,7 @@
     "oas3.0",
     "oas3.1"
   ],
-  "aliases": {
-    "": {
-      "targets": []
-    }
-  },
+  "aliases": {},
   "rules": {},
   "x-embeddedFunctions": [
     {
