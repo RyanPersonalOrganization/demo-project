@@ -1244,7 +1244,6 @@
     }
   },
   "functions": [
-    "new-function",
     "oasDocumentSchema",
     "oasDiscriminator",
     "oasExample",

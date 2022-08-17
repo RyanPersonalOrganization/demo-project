@@ -9,14 +9,6 @@
   ],
   "aliases": {},
   "rules": {},
-  "x-embeddedFunctions": [
-    {
-      "id": "yINomeFaWqEutH7VtjLdV",
-      "extendedFrom": "",
-      "name": "new-function",
-      "content": "print \"hello world\""
-    }
-  ],
   "extends": [
     "cHJqOjEyMzU4Ng@34"
   ],
