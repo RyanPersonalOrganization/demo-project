@@ -11,7 +11,7 @@ tags: [Guides]
 </br>
 </br>
 
-asd
+
 [local link](docs/Guides/Best-Practices.md)
 
 [**Backed By This GIT Repo!**](https://github.com/stoplightio/stoplight-platform-demo)
@@ -41,7 +41,7 @@ var data = null;
 
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
-asd
+
 xhr.addEventListener("readystatechange", function () {
   if (this.readyState === this.DONE) {
     console.log(this.responseText);
@@ -83,7 +83,7 @@ With the `'Try It!'` functionality you can send requests directly to our servers
 If you want to learn more about the data models used by our `APIs`, you can find them at the bottom of the left-hand navigation. Here is an example:
 </br>
 
-asd
+
 ```json json_schema
 {
   "title": "User",
