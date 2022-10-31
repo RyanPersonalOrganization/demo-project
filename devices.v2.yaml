@@ -223,7 +223,20 @@ paths:
         - $ref: '#/components/parameters/sort'
         - $ref: '#/components/parameters/limit'
         - $ref: '#/components/parameters/deviceid'
-      x-securityTest: S12345
+      x-securityTest:
+        x-nm-api-tags:
+          version: '2'
+          scope: domain
+          domain: dogs
+          primaryInformationConcept: breed
+          secondaryInformationConcept:
+            - aggressionlevel
+          lifecycle: published
+          apiConsumers: public
+          dataClassification: confidential
+          pii: true
+          phi: false
+          slack: petStore
       tags:
         - devices
         - CheckOut
