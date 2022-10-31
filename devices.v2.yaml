@@ -763,7 +763,8 @@ tags:
     description: Everything about your devices
   - name: scaleApis
   - name: IOT
-x-build-type: {}
+x-build-type:
+  testBuild: true
 x-extension-2: null
 x-rlg-facets:
   access: privateasdf
