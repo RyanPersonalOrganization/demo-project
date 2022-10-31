@@ -1,5 +1,5 @@
 openapi: 3.0.0
-info: 
+info:
   title: Devices API v2
   version: '2.0'
   description: |-
@@ -41,13 +41,13 @@ servers:
     description: In Design Endpoint
     variables:
       env:
-        default: 'stoplight.io/mocks/demo/stoplight-platform-demo/16372165/'
+        default: stoplight.io/mocks/demo/stoplight-platform-demo/16372165/
         description: default env
   - url: 'https://{env}'
     description: Actual Endpoint
     variables:
       env:
-        default: 'stoplight_test.io/v1'
+        default: stoplight_test.io/v1
         description: default env
 paths:
   '/api/devices/{deviceId}':
@@ -223,13 +223,14 @@ paths:
         - $ref: '#/components/parameters/sort'
         - $ref: '#/components/parameters/limit'
         - $ref: '#/components/parameters/deviceid'
-      x-securityBTtest: S12345
+      x-securityTest: S12345
       tags:
         - devices
         - CheckOut
       security:
         - StoplightDemo Key: []
         - HTTP Auth: []
+      x-extension-2: null
     post:
       summary: newDevice
       tags:
