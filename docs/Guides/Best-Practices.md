@@ -2,7 +2,7 @@
 tags: [Guides]
 ---
 
-# Best Practices
+# Best Practices Demo
 
 This page contains general pieces of advice which do not strictly belong to the [Specification Explained](specification.md) chapter because they are not directly tied to the OpenAPI Specification.
 
