@@ -568,7 +568,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: 'https://stoplight.io/api/v1/projects/demo/designlibrary/nodes/github.yaml/definitions/actor?mid=2380'
+                $ref: 'https://stoplight.io/api/v1/projects/demo/designlibrary/nodes/github.yaml/definitions/actor'
       operationId: get-api-myDevices7
       description: Add a new description
       x-stoplightSecretExtension: x-stoplightSecretValue
