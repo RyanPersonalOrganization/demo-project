@@ -1241,19 +1241,6 @@
       "formats": [
         "oas3"
       ]
-    },
-    "camel-case-params": {
-      "given": [
-        "#Request_Parameter_Header"
-      ],
-      "severity": "error",
-      "then": {
-        "function": "casing",
-        "functionOptions": {
-          "type": "camel"
-        }
-      },
-      "message": "need to have camel params"
     }
   },
   "functions": [

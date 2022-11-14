@@ -8,22 +8,7 @@
     "oas3.1"
   ],
   "aliases": {},
-  "rules": {
-    "camel-case-params": {
-      "given": [
-        "#Request_Parameter_Header"
-      ],
-      "severity": "error",
-      "then": {
-        "function": "casing",
-        "functionOptions": {
-          "type": "camel"
-        }
-      },
-      "name": "camel-case-params",
-      "message": "need to have camel params"
-    }
-  },
+  "rules": {},
   "extends": [
     "cHJqOjEyMzU4Ng@34",
     "cHJqOjEyNjMxNA@1"
