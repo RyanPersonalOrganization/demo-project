@@ -13,7 +13,7 @@ tags: [Guides]
 
 [local link](docs/Guides/Best-Practices.md)
 
-[local link 2](../devices.v2.yaml/paths/~1api~1myDevices/get/)
+[local link 2](devices.v2.yaml/paths/~1api~1myDevices/get/)
 
 [**Backed By This GIT Repo!**](https://github.com/stoplightio/stoplight-platform-demo)
 
