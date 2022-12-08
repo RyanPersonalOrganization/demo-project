@@ -2,9 +2,8 @@
   "description": "",
   "spectralExtends": [],
   "extends": [
-    "cHJqOjEyMzU4Ng",
-    "cHJqOjE1ODA4NQ",
-    "cHJqOjE2NjkwOQ"
+    "cHJqOjE2NjkwOQ",
+    "cHJqOjE1ODA4NQ"
   ],
   "formats": [
     "oas2",
@@ -16,18 +15,18 @@
   "rules": {},
   "extendedStyleguides": [
     {
-      "id": "cHJqOjEyMzU4Ng",
-      "name": "Stoplight Style Guide",
-      "slug": "stoplight-style-guide",
+      "id": "cHJqOjE2NjkwOQ",
+      "name": "Versioning",
+      "slug": "versioning",
       "workspace": {
         "slug": "apistylebook",
         "name": "API Stylebook"
       },
-      "icon": "robot",
-      "color": "#3898ff",
-      "description": "Default rules for Stoplight projects",
+      "icon": "exchange-alt",
+      "color": "#58B19F",
+      "description": "Use Server level versioning",
       "latestRelease": {
-        "release": 34
+        "release": 5
       }
     },
     {
@@ -43,21 +42,6 @@
       "description": "Rules to circumvent critical security risks to APIs",
       "latestRelease": {
         "release": 14
-      }
-    },
-    {
-      "id": "cHJqOjE2NjkwOQ",
-      "name": "Versioning",
-      "slug": "versioning",
-      "workspace": {
-        "slug": "apistylebook",
-        "name": "API Stylebook"
-      },
-      "icon": "exchange-alt",
-      "color": "#58B19F",
-      "description": "Use Server level versioning",
-      "latestRelease": {
-        "release": 5
       }
     }
   ],
