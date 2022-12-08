@@ -6,8 +6,7 @@
     "cHJqOjE1ODA4NQ",
     "cHJqOjE2NjkwOQ",
     "cHJqOjE1OTkxMA",
-    "cHJqOjEzOTI2OA",
-    "cHJqOjEzODYxOQ"
+    "cHJqOjEzOTI2OA"
   ],
   "formats": [
     "oas2",
@@ -91,20 +90,6 @@
       "description": "Help improve the quality of your OpenAPI-based documentation.",
       "latestRelease": {
         "release": 1
-      }
-    },
-    {
-      "id": "cHJqOjEzODYxOQ",
-      "name": "AWS API Gateway",
-      "slug": "aws-api-gateway",
-      "workspace": {
-        "slug": "apistylebook",
-        "name": "API Stylebook"
-      },
-      "icon": "globe-americas",
-      "color": "#FC427B",
-      "latestRelease": {
-        "release": 4
       }
     }
   ],
