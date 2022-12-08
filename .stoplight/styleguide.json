@@ -3,10 +3,7 @@
   "spectralExtends": [],
   "extends": [
     "cHJqOjEyMzU4Ng",
-    "cHJqOjE1ODA4NQ",
-    "cHJqOjE2NjkwOQ",
-    "cHJqOjE1OTkxMA",
-    "cHJqOjEzOTI2OA"
+    "cHJqOjE1ODA4NQ"
   ],
   "formats": [
     "oas2",
@@ -45,51 +42,6 @@
       "description": "Rules to circumvent critical security risks to APIs",
       "latestRelease": {
         "release": 14
-      }
-    },
-    {
-      "id": "cHJqOjE2NjkwOQ",
-      "name": "Versioning",
-      "slug": "versioning",
-      "workspace": {
-        "slug": "apistylebook",
-        "name": "API Stylebook"
-      },
-      "icon": "exchange-alt",
-      "color": "#58B19F",
-      "description": "Use Server level versioning",
-      "latestRelease": {
-        "release": 5
-      }
-    },
-    {
-      "id": "cHJqOjE1OTkxMA",
-      "name": "Spell Check",
-      "slug": "spell-check",
-      "workspace": {
-        "slug": "apistylebook",
-        "name": "API Stylebook"
-      },
-      "icon": "server",
-      "color": "#2bc137",
-      "description": "Checks spelling in descriptions",
-      "latestRelease": {
-        "release": 7
-      }
-    },
-    {
-      "id": "cHJqOjEzOTI2OA",
-      "name": "Documentation",
-      "slug": "documentation",
-      "workspace": {
-        "slug": "apistylebook",
-        "name": "API Stylebook"
-      },
-      "icon": "book-reader",
-      "color": "#17c0eb",
-      "description": "Help improve the quality of your OpenAPI-based documentation.",
-      "latestRelease": {
-        "release": 1
       }
     }
   ],
