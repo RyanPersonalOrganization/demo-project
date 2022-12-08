@@ -2,7 +2,8 @@
   "description": "",
   "spectralExtends": [],
   "extends": [
-    "cHJqOjEyMzU4Ng"
+    "cHJqOjEyMzU4Ng",
+    "cHJqOjE1ODA4NQ"
   ],
   "formats": [
     "oas2",
@@ -26,6 +27,21 @@
       "description": "Default rules for Stoplight projects",
       "latestRelease": {
         "release": 34
+      }
+    },
+    {
+      "id": "cHJqOjE1ODA4NQ",
+      "name": "OWASP Top 10",
+      "slug": "owasp-top-10",
+      "workspace": {
+        "slug": "apistylebook",
+        "name": "API Stylebook"
+      },
+      "icon": "key",
+      "color": "#6672e6",
+      "description": "Rules to circumvent critical security risks to APIs",
+      "latestRelease": {
+        "release": 14
       }
     }
   ],
