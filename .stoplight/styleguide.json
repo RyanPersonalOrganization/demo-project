@@ -1,6 +1,11 @@
 {
   "description": "",
   "spectralExtends": [],
+  "extends": [
+    "cHJqOjEyMzU4Ng",
+    "cHJqOjEyNjMxNA",
+    "cHJqOjE3MjAwMA"
+  ],
   "formats": [
     "oas2",
     "oas3",
@@ -9,10 +14,6 @@
   ],
   "aliases": {},
   "rules": {},
-  "extends": [
-    "cHJqOjEyMzU4Ng@34",
-    "cHJqOjEyNjMxNA@1"
-  ],
   "extendedStyleguides": [
     {
       "id": "cHJqOjEyMzU4Ng",
@@ -40,6 +41,21 @@
       },
       "icon": "pencil-ruler",
       "color": "#bc48cb",
+      "latestRelease": {
+        "release": 1
+      }
+    },
+    {
+      "id": "cHJqOjE3MjAwMA",
+      "name": "demoSSG",
+      "slug": "demo-ssg-1",
+      "workspace": {
+        "domain": "apidocs.summitsw.co",
+        "slug": "demo",
+        "name": "Stoplight Demo"
+      },
+      "icon": "unicorn",
+      "color": "#EAB543",
       "latestRelease": {
         "release": 1
       }
