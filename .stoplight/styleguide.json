@@ -3,7 +3,8 @@
   "spectralExtends": [],
   "extends": [
     "cHJqOjEyMzU4Ng",
-    "cHJqOjE1ODA4NQ"
+    "cHJqOjE1ODA4NQ",
+    "cHJqOjE2NjkwOQ"
   ],
   "formats": [
     "oas2",
@@ -42,6 +43,21 @@
       "description": "Rules to circumvent critical security risks to APIs",
       "latestRelease": {
         "release": 14
+      }
+    },
+    {
+      "id": "cHJqOjE2NjkwOQ",
+      "name": "Versioning",
+      "slug": "versioning",
+      "workspace": {
+        "slug": "apistylebook",
+        "name": "API Stylebook"
+      },
+      "icon": "exchange-alt",
+      "color": "#58B19F",
+      "description": "Use Server level versioning",
+      "latestRelease": {
+        "release": 5
       }
     }
   ],
