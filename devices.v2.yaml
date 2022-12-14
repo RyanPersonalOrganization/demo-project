@@ -50,7 +50,7 @@ servers:
         default: stoplight_test.io/v1
         description: default env
 paths:
-  '/api/devices/{deviceId}':
+  '/api/devices/{testID}':
     get:
       summary: listDevice
       responses:
@@ -485,11 +485,9 @@ paths:
     parameters:
       - schema:
           type: string
-          example: jetsonsFutureHome
-        name: deviceId
+        name: testID
         in: path
         required: true
-        description: unique per account (see `'My Account'` for more information)
   /api/myDevices:
     get:
       summary: myDevices
